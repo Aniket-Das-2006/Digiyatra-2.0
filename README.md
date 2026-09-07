@@ -7,11 +7,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Contact Developer](https://img.shields.io/badge/Support%20%2F%20GPay-7478715872-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](tel:+917478715872)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate%20☕-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](#-buy-me-a-coffee--developer-support)
 
 **An Enterprise-Grade, Self-Sovereign Biometric Identity, Real-Time Telemetry & Distributed Travel Orchestration Platform**
 
-[🌐 **Explore Live Production App**](https://digiyatra-2-0.vercel.app) • [📐 **Master System Architecture**](#-master-system-architecture) • [🚀 **Developer Quickstart**](#-getting-started) • [📞 **Contact & Support**](#-support--contact-developer)
+[🌐 **Explore Live Production App**](https://digiyatra-2-0.vercel.app) • [📐 **Master System Architecture**](#-master-system-architecture) • [🚀 **Developer Quickstart**](#-getting-started) • [☕ **Buy Me A Coffee**](#-buy-me-a-coffee--developer-support)
 
 </div>
 
@@ -313,11 +313,20 @@ The production application is deployed globally on Vercel's Edge Network with au
 
 ---
 
-## 📞 Support & Contact Developer
+## ☕ Buy Me A Coffee & Developer Support
 
 If you find this project inspiring or visionary for India's digital transit infrastructure, consider supporting its developer!
 
 <div align="center">
+
+<details>
+<summary style="cursor: pointer;">
+  <img src="https://img.shields.io/badge/☕%20Buy%20Me%20A%20Coffee-Support%20Aniket%20Das-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee" height="42" />
+  <br/>
+  <sub><b>👉 Click here to reveal Developer Payment & Direct Contact Details (GPay / PhonePe / Paytm / Call) 👈</b></sub>
+</summary>
+
+<br/>
 
 ### 📲 Developer Contact & Direct Support
 **Aniket Das**
@@ -326,13 +335,15 @@ If you find this project inspiring or visionary for India's digital transit infr
 | :--- | :--- |
 | **Phone & Call** | [`+91 7478715872`](tel:+917478715872) |
 | **WhatsApp Direct** | [`Chat on WhatsApp (+91 7478715872)`](https://wa.me/917478715872) |
-| **Google Pay / PhonePe / Paytm** | `7478715872` (`7478715872@upi`) |
+| **Google Pay / PhonePe / Paytm / BHIM UPI** | `7478715872` (`7478715872@upi`) |
 
 <br/>
 
 [![WhatsApp Direct](https://img.shields.io/badge/WhatsApp-Direct%20Chat-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/917478715872)
 [![Direct Phone Call](https://img.shields.io/badge/Call%20Direct-7478715872-0088cc?style=for-the-badge&logo=phone&logoColor=white)](tel:+917478715872)
 [![Star this Repo](https://img.shields.io/badge/⭐%20Star%20Repo-DigiYatra--2.0-yellow?style=for-the-badge)](https://github.com/Aniket-Das-2006/Digiyatra-2.0/stargazers)
+
+</details>
 
 </div>
 
