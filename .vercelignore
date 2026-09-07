@@ -1,0 +1,5 @@
+node_modules
+.git
+public/*_orig.mp4
+*.zip
+

@@ -3,7 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=1280, initial-scale=0.35, minimum-scale=0.1, maximum-scale=5.0, user-scalable=yes" />
+    <script>
+      (function() {
+        function forceDesktopViewport() {
+          var targetWidth = 1280;
+          var screenWidth = window.screen.width;
+          if (screenWidth < targetWidth && screenWidth > 0) {
+            var scale = screenWidth / targetWidth;
+            if (scale < 0.2) scale = 0.2;
+            var meta = document.querySelector('meta[name="viewport"]');
+            if (meta) {
+              meta.setAttribute('content', 'width=' + targetWidth + ', initial-scale=' + scale.toFixed(4) + ', minimum-scale=0.1, maximum-scale=5.0, user-scalable=yes');
+            }
+          }
+        }
+        forceDesktopViewport();
+        window.addEventListener('resize', forceDesktopViewport);
+      })();
+    </script>
     <meta name="description" content="IRCTC Redesign – Book train tickets, flights, hotels and more. Your journey, just a tap away." />
     <title>IRCTC – Your journey, Just a Tap Away</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">

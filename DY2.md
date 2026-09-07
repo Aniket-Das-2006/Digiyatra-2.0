@@ -3,7 +3,7 @@
 ## 📌 Project Summary: DigiYatra 2.0 (IRCTC Redesign)
 - **GitHub Repository:** [https://github.com/Aniket-Das-2006/Digiyatra-2.0](https://github.com/Aniket-Das-2006/Digiyatra-2.0)
 - **Local Directory:** `E:\DY2.0`
-- **Live Public Link:** [https://economic-processing-interactions-oscar.trycloudflare.com](https://economic-processing-interactions-oscar.trycloudflare.com)
+- **Live Public 24/7 Link:** [https://digiyatra-2-0.vercel.app](https://digiyatra-2-0.vercel.app)
 
 ---
 
