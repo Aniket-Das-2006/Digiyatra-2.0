@@ -362,7 +362,7 @@ Copyright (c) 2026 Aniket Das
 
 <div align="center">
 
-**Built with passion by Aniket Das (`+91 7478715872`)**  
+**Built with [❤️](https://wa.me/917478715872) by [Aniket Das](https://github.com/Aniket-Das-2006)**  
 *Revolutionizing India's Digital Travel Infrastructure.*
 
 </div>
