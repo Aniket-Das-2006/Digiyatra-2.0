@@ -7,11 +7,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Commit Activity](https://img.shields.io/github/commit-activity/m/Aniket-Das-2006/Digiyatra-2.0?style=for-the-badge&color=22c55e&label=Activity)](https://github.com/Aniket-Das-2006/Digiyatra-2.0/graphs/commit-activity)
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate%20☕-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](#-buy-me-a-coffee--developer-support)
 
 **An Enterprise-Grade, Self-Sovereign Biometric Identity, Real-Time Telemetry & Distributed Travel Orchestration Platform**
 
-[🌐 **Explore Live Production App**](https://digiyatra-2-0.vercel.app) • [📐 **Master System Architecture**](#-master-system-architecture) • [🚀 **Developer Quickstart**](#-getting-started) • [☕ **Buy Me A Coffee**](#-buy-me-a-coffee--developer-support)
+[🌐 **Explore Live Production App**](https://digiyatra-2-0.vercel.app) • [📐 **Master System Architecture**](#-master-system-architecture) • [🚀 **Developer Quickstart**](#-getting-started) • [📈 **Activity Graph**](#-repository-activity--telemetry-graph) • [☕ **Buy Me A Coffee**](#-buy-me-a-coffee--developer-support)
 
 </div>
 
@@ -310,6 +311,19 @@ The production application is deployed globally on Vercel's Edge Network with au
 
 * 🔗 **Live Production App**: [https://digiyatra-2-0.vercel.app](https://digiyatra-2-0.vercel.app)
 * 🔗 **GitHub Repository**: [https://github.com/Aniket-Das-2006/Digiyatra-2.0](https://github.com/Aniket-Das-2006/Digiyatra-2.0)
+
+---
+
+## 📈 Repository Activity & Telemetry Graph
+
+<div align="center">
+
+![DigiYatra 2.0 Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Aniket-Das-2006&repo=Digiyatra-2.0&theme=react-dark&color=22c55e&line=22c55e&point=22c55e&area=true&hide_border=true)
+
+[![Commit Activity](https://img.shields.io/github/commit-activity/m/Aniket-Das-2006/Digiyatra-2.0?style=for-the-badge&color=22c55e&label=Commit%20Activity)](https://github.com/Aniket-Das-2006/Digiyatra-2.0/graphs/commit-activity)
+[![Last Commit](https://img.shields.io/github/last-commit/Aniket-Das-2006/Digiyatra-2.0?style=for-the-badge&color=22c55e&label=Last%20Commit)](https://github.com/Aniket-Das-2006/Digiyatra-2.0/commits/main)
+
+</div>
 
 ---
 
