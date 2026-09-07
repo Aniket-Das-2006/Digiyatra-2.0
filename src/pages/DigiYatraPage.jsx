@@ -23,7 +23,7 @@ import WeatherIntelligence from '../components/WeatherIntelligence';
 import CarbonOffsetCard from '../components/CarbonOffsetCard';
 import NearbyTransport from '../components/NearbyTransport';
 import MobileAppBanner from '../components/MobileAppBanner';
-import { Volume2, VolumeX, Plane, Luggage, Navigation, MapPin, Shield, FileCheck, Sparkles, BarChart3, Sun, Leaf, Globe, Bus, AlertTriangle, Tag, Building2, CheckCircle2 } from 'lucide-react';
+import { Plane, Luggage, Navigation, MapPin, Shield, FileCheck, Sparkles, BarChart3, Sun, Leaf, Globe, Bus, AlertTriangle } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useAnimations';
 import { useDigiYatra } from '../context/DigiYatraContext';
 import { destinations } from '../data/flightDatabase';
@@ -34,14 +34,12 @@ const DigiYatraPage = () => {
   const { t } = useTranslation();
   const [destRef, destVisible] = useScrollReveal();
   const [offersRef, offersVisible] = useScrollReveal();
-  const [featuresRef, featuresVisible] = useScrollReveal();
 
   const { digiYatraSubView } = useDigiYatra();
 
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted] = useState(true);
   const videoRef = useRef(null);
 
-  const [searchParams, setSearchParams] = useState(null);
   const [hoveredDest, setHoveredDest] = useState(null);
   const [selectedDestId, setSelectedDestId] = useState(null);
   const [showBookingModal, setShowBookingModal] = useState(false);
@@ -50,8 +48,11 @@ const DigiYatraPage = () => {
 
   // When subview changes, set the appropriate default active tab
   React.useEffect(() => {
-    if (digiYatraSubView === 'utility') setActiveTab('sec-flight-tracker');
-    else if (digiYatraSubView === 'authentication') setActiveTab('sec-identity-wallet');
+    if (digiYatraSubView === 'utility') {
+      setActiveTab(prev => prev && prev.startsWith('sec-') && ['sec-flight-tracker', 'sec-baggage', 'sec-trip-manager', 'sec-airport-map', 'sec-price-intel', 'sec-weather', 'sec-carbon', 'sec-transport', 'sec-sos'].includes(prev) ? prev : 'sec-flight-tracker');
+    } else if (digiYatraSubView === 'authentication') {
+      setActiveTab(prev => prev && prev.startsWith('sec-') && ['sec-identity-wallet', 'sec-consent', 'sec-trust', 'sec-profile', 'sec-analytics', 'sec-international'].includes(prev) ? prev : 'sec-identity-wallet');
+    }
   }, [digiYatraSubView]);
 
   // Separate national and international for display

@@ -7,13 +7,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Security](https://img.shields.io/badge/Security-AES--256--GCM%20%7C%20HSM%20%7C%20ZKP-red?style=for-the-badge&logo=shield&logoColor=white)](#-security-encryption--cloud-store)
-[![Compliance](https://img.shields.io/badge/Compliance-DPDP%20Act%202023%20%7C%20IATA%20One%20ID-blue?style=for-the-badge)](#-data-privacy--compliance-framework)
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate%20☕-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](#-support--buy-me-a-coffee)
+[![Contact Developer](https://img.shields.io/badge/Support%20%2F%20GPay-7478715872-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](tel:+917478715872)
 
 **An Enterprise-Grade, Self-Sovereign Biometric Identity, Real-Time Telemetry & Distributed Travel Orchestration Platform**
 
-[🌐 **Explore Live Production App**](https://digiyatra-2-0.vercel.app) • [📐 **Master System Architecture**](#-master-system-architecture) • [🚀 **Developer Quickstart**](#-getting-started) • [☕ **Support Project**](#-support--buy-me-a-coffee)
+[🌐 **Explore Live Production App**](https://digiyatra-2-0.vercel.app) • [📐 **Master System Architecture**](#-master-system-architecture) • [🚀 **Developer Quickstart**](#-getting-started) • [📞 **Contact & Support**](#-support--contact-developer)
 
 </div>
 
@@ -21,15 +19,15 @@
 
 ## 📌 Executive Summary
 
-**DigiYatra 2.0** represents a vision for India's digital transit infrastructure. Designed as a high-throughput, zero-trust platform, DigiYatra 2.0 unifies biometric identity verification, real-time aviation telemetry, IoT baggage tracking, automated FRRO hospitality compliance, emergency SOS telematics, and multi-credential self-sovereign wallets into one cohesive ecosystem.
+**DigiYatra 2.0** represents a comprehensive architectural vision for India's digital transit infrastructure. Designed as a high-throughput, zero-trust platform, DigiYatra 2.0 unifies biometric identity verification, real-time aviation telemetry, IoT baggage tracking, automated FRRO hospitality compliance, emergency SOS telematics, and multi-credential self-sovereign identity vaults into one cohesive system.
 
-Built with **React 18/19**, **Vite**, **Glassmorphic HSL Design Tokens**, **Vercel Global Edge CDN**, and designed for a multi-region **Node.js/Go Microservices Backend**, DigiYatra 2.0 eliminates friction at airport boarding gates, hotel check-ins, and security checkpoints while enforcing strict adherence to India's **DPDP Act 2023** and **IATA One ID** standards.
+Built with **React 18/19**, **Vite**, **Glassmorphic HSL Design Tokens**, **Vercel Global Edge CDN**, and engineered for a multi-region **Node.js/Go Microservices Backend**, DigiYatra 2.0 eliminates friction at airport boarding gates, hotel check-ins, and security checkpoints while enforcing strict adherence to India's **DPDP Act 2023** and **IATA One ID** standards.
 
 ---
 
 ## 📐 Master System Architecture
 
-The blueprint below details the complete full-stack enterprise architecture of DigiYatra 2.0, spanning client presentation, security enclaves, API gateways, event streaming buses, microservices, and external government/aviation integrations.
+The diagram below details the complete full-stack enterprise architecture of DigiYatra 2.0, spanning client presentation, security enclaves, API gateways, event streaming buses, microservices, and external government/aviation integrations.
 
 ```mermaid
 graph TB
@@ -62,7 +60,7 @@ graph TB
     end
 
     subgraph Cloud_Security_Store["🔒 Cloud Security & Encrypted Data Store"]
-        HSM Vault["Hardware Security Module (HSM) Key Vault"]
+        HSMVault["Hardware Security Module (HSM) Key Vault"]
         ZeroTrustDB["PostgreSQL + CockroachDB<br/>(AES-256-GCM Encrypted at Rest)"]
         RedisCache["Redis Cluster (Session & Real-Time Cache)"]
         StorageEnclave["Zero-Knowledge Data Vault<br/>(Biometric Template Enclave)"]
@@ -92,7 +90,7 @@ graph TB
     Kafka <--> WebSocket
 
     IdentityService --> StorageEnclave
-    IdentityService --> HSM Vault
+    IdentityService --> HSMVault
     FlightService --> RedisCache
     BaggageService --> MQTT
     HotelService --> ZeroTrustDB
@@ -217,7 +215,7 @@ sequenceDiagram
 | :--- | :--- | :--- |
 | **Frontend Framework** | React 19.2 + Vite 8.2 | Component engine & ultra-fast HMR ESM bundler |
 | **Routing** | React Router DOM v7 | Single Page Application client-side routing |
-| **Design System** | Custom Vanilla CSS3 | Glassmorphism, HSL variable tokens, CSS Grid |
+| **Design System** | Custom Vanilla CSS3 | Glassmorphic, HSL variable tokens, CSS Grid |
 | **Icons** | Lucide React | Modern SVG vector icons |
 | **Localization** | `i18next`, `react-i18next` | Multilingual dictionary translation engine |
 | **Hosting & Edge CDN** | Vercel Global CDN | 24/7 Production hosting with SPA rewrite engine |
@@ -315,28 +313,28 @@ The production application is deployed globally on Vercel's Edge Network with au
 
 ---
 
-## ☕ Support & Buy Me A Coffee
+## 📞 Support & Contact Developer
 
-If you find this project inspiring, helpful, or visionary for India's digital transit infrastructure, consider supporting its developer! Every coffee fuels more open-source innovation, system architecture design, and high-performance engineering.
+If you find this project inspiring or visionary for India's digital transit infrastructure, consider supporting its developer!
 
 <div align="center">
 
-<a href="https://www.buymeacoffee.com/aniketdas" target="_blank">
-  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="220" style="border-radius: 12px; box-shadow: 0 8px 24px rgba(255,221,0,0.4);" />
-</a>
+### 📲 Developer Contact & Direct Support
+**Aniket Das**
 
-<br/><br/>
+| Channel | Details / Link |
+| :--- | :--- |
+| **Phone & Call** | [`+91 7478715872`](tel:+917478715872) |
+| **WhatsApp Direct** | [`Chat on WhatsApp (+91 7478715872)`](https://wa.me/917478715872) |
+| **Google Pay / PhonePe / Paytm** | `7478715872` (`7478715872@upi`) |
 
-[![Sponsor Aniket Das](https://img.shields.io/badge/Sponsor%20Developer- Aniket%20Das-ff69b4?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/Aniket-Das-2006)
+<br/>
+
+[![WhatsApp Direct](https://img.shields.io/badge/WhatsApp-Direct%20Chat-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/917478715872)
+[![Direct Phone Call](https://img.shields.io/badge/Call%20Direct-7478715872-0088cc?style=for-the-badge&logo=phone&logoColor=white)](tel:+917478715872)
 [![Star this Repo](https://img.shields.io/badge/⭐%20Star%20Repo-DigiYatra--2.0-yellow?style=for-the-badge)](https://github.com/Aniket-Das-2006/Digiyatra-2.0/stargazers)
-[![Fork this Repo](https://img.shields.io/badge/🍴%20Fork%20Repo-DigiYatra--2.0-orange?style=for-the-badge)](https://github.com/Aniket-Das-2006/Digiyatra-2.0/network/members)
 
 </div>
-
-### 💖 Ways to Support:
-- ⭐️ **Star the Repository**: Show your appreciation on GitHub!
-- 🔀 **Fork & Contribute**: Submit Pull Requests, enhance modules, or fix issues.
-- ☕ **Buy Me a Coffee**: [buymeacoffee.com/aniketdas](https://www.buymeacoffee.com/aniketdas) to keep the project growing!
 
 ---
 
@@ -353,7 +351,7 @@ Copyright (c) 2026 Aniket Das
 
 <div align="center">
 
-**Built with passion by [Aniket Das](https://github.com/Aniket-Das-2006)**  
-*Revolutionizing India's Digital Travel Experience.*
+**Built with passion by Aniket Das (`+91 7478715872`)**  
+*Revolutionizing India's Digital Travel Infrastructure.*
 
 </div>
