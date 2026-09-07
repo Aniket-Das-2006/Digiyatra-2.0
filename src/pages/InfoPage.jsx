@@ -31,9 +31,7 @@ const InfoPage = () => {
   return (
     <div className="info-page-wrapper">
       <section className="hero">
-        <video autoPlay loop muted playsInline className="hero-video">
-          <source src="/FC.mp4" type="video/mp4" />
-        </video>
+        <video src="/FC.mp4" autoPlay loop muted playsInline className="hero-video" />
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <h1>DigiYatra Information Hub</h1>

@@ -11,7 +11,7 @@ const compressVideo = (inputFile, outputFile) => {
       '-y',
       '-i', inputFile,
       '-vcodec', 'libx264',
-      '-crf', '23',             // Visually lossless
+      '-crf', '28',             // Good compression for web & under 100MB GitHub limit
       '-preset', 'fast',        // Good balance of speed and compression
       '-profile:v', 'main',     // Highly compatible profile for GPU hardware decoding
       '-pix_fmt', 'yuv420p',    // Standard color space for hardware decoding

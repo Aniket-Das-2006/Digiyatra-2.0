@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Temporary logs & heavy original video files
+*_orig.mp4
+cf.txt
+cf2.txt
+tunnel.txt
+tunnel2.txt
+null
+
