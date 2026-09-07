@@ -1,17 +1,19 @@
-# 🛫 DigiYatra 2.0 – Verified Identity & Universal Seamless Travel
+# 🛫 DigiYatra 2.0 – Verified Identity, Universal Travel & Cloud Microservices Architecture
 
 <div align="center">
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel%2024%2F7-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://digiyatra-2-0.vercel.app)
+[![Live Production App](https://img.shields.io/badge/Live%20Production-Vercel%2024%2F7-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://digiyatra-2-0.vercel.app)
 [![GitHub Repository](https://img.shields.io/badge/GitHub-DigiYatra--2.0-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Aniket-Das-2006/Digiyatra-2.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Compliance](https://img.shields.io/badge/Compliance-DPDP%20Act%202023%20%7C%20IATA%20One%20ID-blue?style=for-the-badge)](https://meity.gov.in)
+[![Security](https://img.shields.io/badge/Security-AES--256--GCM%20%7C%20HSM%20%7C%20ZKP-red?style=for-the-badge&logo=shield&logoColor=white)](#-security-encryption--cloud-store)
+[![Compliance](https://img.shields.io/badge/Compliance-DPDP%20Act%202023%20%7C%20IATA%20One%20ID-blue?style=for-the-badge)](#-data-privacy--compliance-framework)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate%20☕-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](#-support--buy-me-a-coffee)
 
-**A Next-Generation Decentralized Biometric Identity & Universal Travel Orchestration Platform**
+**An Enterprise-Grade, Self-Sovereign Biometric Identity, Real-Time Telemetry & Distributed Travel Orchestration Platform**
 
-[🌐 **Explore Live Production App**](https://digiyatra-2-0.vercel.app) • [📖 **Project Documentation**](#-system-architecture) • [🚀 **Quickstart Guide**](#-getting-started)
+[🌐 **Explore Live Production App**](https://digiyatra-2-0.vercel.app) • [📐 **Master System Architecture**](#-master-system-architecture) • [🚀 **Developer Quickstart**](#-getting-started) • [☕ **Support Project**](#-support--buy-me-a-coffee)
 
 </div>
 
@@ -19,129 +21,211 @@
 
 ## 📌 Executive Summary
 
-**DigiYatra 2.0** is an enterprise-grade redesign and architectural evolution of India's digital travel identity ecosystem. Designed to integrate seamless biometric verification across domestic and international transport networks, hospitality sectors, and security checkpoints, DigiYatra 2.0 merges **Self-Sovereign Identity (SSI)** principles with modern, high-performance web engineering.
+**DigiYatra 2.0** represents a vision for India's digital transit infrastructure. Designed as a high-throughput, zero-trust platform, DigiYatra 2.0 unifies biometric identity verification, real-time aviation telemetry, IoT baggage tracking, automated FRRO hospitality compliance, emergency SOS telematics, and multi-credential self-sovereign wallets into one cohesive ecosystem.
 
-Built with **React 18/19**, **Vite**, custom **Glassmorphic Design Tokens**, and **Zero-Trust Client Enclave Simulation**, the platform provides paperless, contact-free transit for airport check-in, automated FRRO Form C hotel check-ins, real-time baggage telemetry, and multi-credential identity management.
+Built with **React 18/19**, **Vite**, **Glassmorphic HSL Design Tokens**, **Vercel Global Edge CDN**, and designed for a multi-region **Node.js/Go Microservices Backend**, DigiYatra 2.0 eliminates friction at airport boarding gates, hotel check-ins, and security checkpoints while enforcing strict adherence to India's **DPDP Act 2023** and **IATA One ID** standards.
 
 ---
 
-## 📐 System Architecture
+## 📐 Master System Architecture
 
-The DigiYatra 2.0 system is structured into five decoupled layers to ensure strict data privacy, low-latency client rendering, and seamless cross-platform interoperability.
+The blueprint below details the complete full-stack enterprise architecture of DigiYatra 2.0, spanning client presentation, security enclaves, API gateways, event streaming buses, microservices, and external government/aviation integrations.
 
 ```mermaid
-graph TD
-    subgraph Client_Presentation_Layer["🎨 Client Presentation Layer"]
-        UI["Glassmorphic UI System<br/>(Vanilla CSS Design Tokens)"]
-        ViewportEngine["Force-Desktop Mobile Viewport Engine<br/>(Width=1280 Scale Controller)"]
-        i18n["Localization Engine<br/>(i18next: English, Hindi, Bengali)"]
+graph TB
+    subgraph Client_Layer["📱 Client Presentation & Viewport Layer"]
+        ReactApp["React 19 + Vite SPA Engine"]
+        GlassUI["Glassmorphic UI Design System"]
+        ViewportController["Force-Desktop Mobile Viewport Engine (width=1280)"]
+        i18nEngine["Multilingual Engine (English, Hindi, Bengali)"]
     end
 
-    subgraph Core_Application_State["🧠 Core Application State"]
-        StateContext["DigiYatraContext<br/>(Global React State Provider)"]
-        Router["React Router v7 DOM<br/>(Client-Side Routing)"]
-        SPARewrites["Vercel SPA Engine<br/>(vercel.json Rewrite Rules)"]
+    subgraph API_Gateway_Security["🛡️ Edge API Gateway & Security Firewall"]
+        APIGateway["Kong / Cloudflare API Gateway"]
+        WAF["Web Application Firewall (WAF) & Rate Limiter"]
+        OAuth2["OAuth2 / OIDC + Mutual TLS (mTLS) Auth"]
     end
 
-    subgraph Identity_Privacy_Enclave["🔒 Identity & Privacy Enclave"]
-        WalletModule["Multi-Credential Identity Wallet"]
-        ZKPVerification["Zero-Knowledge Biometric Proof Engine"]
-        ConsentManager["DPDP Act 2023 Consent Manager"]
+    subgraph Messaging_Event_Bus["⚡ Real-Time Messaging & Event Bus"]
+        Kafka["Apache Kafka Event Streaming"]
+        MQTT["MQTT Broker (IoT Baggage & Telemetry)"]
+        WebSocket["WebSocket Server (Live Flight & Gate Pushes)"]
     end
 
-    subgraph Travel_Ecosystem_Services["✈️ Travel Ecosystem Services"]
-        FlightTracker["Flight & Baggage Telemetry Engine"]
-        SmartAirportMap["Interactive Terminal Map Navigator"]
-        FormCWizard["Automated FRRO Form C Hotel Check-in"]
-        PriceIntel["Price & Weather Intelligence Module"]
+    subgraph Microservices_Core["⚙️ Enterprise Microservices Core"]
+        IdentityService["Identity & Biometric Service<br/>(W3C DID Issuer & ZKP Proof Validator)"]
+        FlightService["Flight Telemetry Service<br/>(Live Amadeus / FlightRadar24 Integration)"]
+        BaggageService["IoT Baggage & GPS Tracking Service<br/>(RFID Mesh & BLE Beacon Resolver)"]
+        HotelService["Hospitality & FRRO Service<br/>(Automated Form C Immigration Engine)"]
+        BookingService["Booking & Payment Gateway Service<br/>(IRCTC & Tokenized UPI Connector)"]
+        SOSService["Emergency SOS Telematics Service<br/>(CISF & Police 112 Rapid Dispatch)"]
     end
 
-    subgraph Infrastructure_Deployment["🌐 Infrastructure & CDN Deployment"]
-        VercelCDN["Vercel Global Edge Network<br/>(24/7 Production Host)"]
-        GHActions["GitHub Actions CI/CD Pipeline"]
+    subgraph Cloud_Security_Store["🔒 Cloud Security & Encrypted Data Store"]
+        HSM Vault["Hardware Security Module (HSM) Key Vault"]
+        ZeroTrustDB["PostgreSQL + CockroachDB<br/>(AES-256-GCM Encrypted at Rest)"]
+        RedisCache["Redis Cluster (Session & Real-Time Cache)"]
+        StorageEnclave["Zero-Knowledge Data Vault<br/>(Biometric Template Enclave)"]
     end
 
-    UI --> StateContext
-    ViewportEngine --> UI
-    i18n --> UI
-    StateContext --> Router
-    Router --> SPARewrites
-    StateContext --> WalletModule
-    WalletModule --> ZKPVerification
-    ConsentManager --> WalletModule
-    StateContext --> Travel_Ecosystem_Services
-    SPARewrites --> VercelCDN
-    GHActions --> VercelCDN
+    subgraph External_Integrations["🌐 External Government & Industry Connectors"]
+        Aadhaar["UIDAI Aadhaar API"]
+        Passport["DigiLocker / Passport Seva API"]
+        IATA["IATA One ID Trust Registry"]
+        FRRO["Bureau of Immigration (FRRO Portal)"]
+        Emergency112["National Emergency Response (112 API)"]
+        Airlines["Airline Reservation Systems (Sabre/Amadeus)"]
+    end
+
+    ReactApp --> APIGateway
+    ViewportController --> ReactApp
+    i18nEngine --> ReactApp
+    GlassUI --> ReactApp
+
+    APIGateway --> WAF
+    WAF --> OAuth2
+    OAuth2 --> Microservices_Core
+
+    Microservices_Core <--> Kafka
+    Microservices_Core <--> MQTT
+    WebSocket <--> ReactApp
+    Kafka <--> WebSocket
+
+    IdentityService --> StorageEnclave
+    IdentityService --> HSM Vault
+    FlightService --> RedisCache
+    BaggageService --> MQTT
+    HotelService --> ZeroTrustDB
+    BookingService --> ZeroTrustDB
+    SOSService --> Emergency112
+
+    IdentityService <--> Aadhaar
+    IdentityService <--> Passport
+    IdentityService <--> IATA
+    HotelService <--> FRRO
+    FlightService <--> Airlines
+    SOSService <--> Emergency112
 ```
 
 ---
 
-## 🔄 Zero-Trust Biometric Data Flow
+## 🔄 Cryptographic Zero-Trust Data Flow
 
-DigiYatra 2.0 implements **Privacy-by-Design**. Biometric templates and identity credentials (Aadhaar, Passport, DigiLocker, IATA One ID) remain stored exclusively inside local client storage enclaves. No central database stores plaintext biometric data.
+DigiYatra 2.0 enforces **Self-Sovereign Privacy**. Biometric hashes and identity documents are encrypted locally and validated via **Zero-Knowledge Proofs (ZKP)**. Plaintext biometrics are never stored in centralized cloud databases.
 
 ```mermaid
 sequenceDiagram
     autonumber
-    actor User as Passenger
-    participant App as DigiYatra 2.0 Enclave
-    participant Wallet as Local Credentials Vault
-    participant Gate as Airport/Hotel Gate Scanner
-    participant Trust as DPDP Consent Audit Trail
+    actor Passenger as 🧳 Passenger
+    participant App as 📱 Mobile Enclave App
+    participant Vault as 🔐 Local Storage (AES-256)
+    participant Gateway as 🛡️ API Gateway (mTLS)
+    participant ZKP as 🧠 ZKP Verification Engine
+    participant Gate as 🚪 Gate Biometric Camera
+    participant Audit as 📜 DPDP Audit Logger
 
-    User->>App: 1. Select Identity Credential (Aadhaar / Passport)
-    App->>Wallet: 2. Generate Ephemeral Verifiable Credential (VC)
-    Wallet-->>App: 3. Return ZKP Signed Identity Token
-    User->>Gate: 4. Biometric Face ID Scan at Gate
-    Gate->>App: 5. Match Ephemeral Hash with Live Camera Vector
-    App->>Trust: 6. Log Consent & Verification Proof (DPDP Audit)
-    App-->>Gate: 7. Grant Access & Auto-Purge Local Session Token
+    Passenger->>App: 1. Initiate Verification (Aadhaar/Passport)
+    App->>Vault: 2. Generate Ephemeral Verifiable Credential (VC)
+    Vault-->>App: 3. Sign VC with Ephemeral Private Key
+    App->>Gateway: 4. Transmit Zero-Knowledge Proof (ZKP) Hash
+    Gateway->>ZKP: 5. Validate ZKP Signature without Reading Raw Data
+    ZKP-->>Gateway: 6. Proof Validated (True/False)
+    Gate->>Gateway: 7. Capture Facial Vector at Checkpoint
+    Gateway->>Gate: 8. Local Vector Match Succeeded -> Open Gate
+    Gateway->>Audit: 9. Record Immutable Access Timestamp (DPDP Compliance)
+    Gateway-->>App: 10. Trigger Instant Token Auto-Purge Cron
 ```
 
 ---
 
-## ✨ Key Feature Breakdown
+## 🚨 Emergency SOS & Real-Time IoT Telematics Flow
 
-### 1. 🛂 Biometric Multi-Credential Wallet
-* **Unified Identity Hub**: Store and manage Aadhaar, Indian Passport, DigiLocker, and IATA One ID credentials in a single cryptographically secure interface.
-* **Biometric Scan Simulator**: Real-time canvas-based facial recognition scanner (`FaceIdAnimation.jsx`) with dynamic biometric mesh overlays.
-* **Instant Revocation**: Passengers retain 100% control over shared data with one-click credential purging.
+In critical events (medical emergency, security threat, lost baggage), the platform initiates immediate multi-channel telemetry dispatch.
 
-### 2. ✈️ Flight & Baggage Telemetry
-* **Live Flight Radar**: Track flight status, gate changes, boarding times, and delay predictions.
-* **Smart Terminal Maps**: Interactive airport map layout (`SmartAirportMap.jsx`) with gate-to-gate turn-by-turn navigation.
-* **RFID Baggage Tracking**: Real-time luggage status notification from check-in to belt claim.
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as 🆘 Passenger in Distress
+    participant App as 📱 Client App
+    participant GPS as 📡 Satellite GPS / Geofence
+    participant Broker as ⚡ MQTT / Kafka Bus
+    participant SOS as 🚓 SOS Telematics Dispatch
+    participant CISF as 👮 CISF / Airport Security
+    participant Police as 🚑 Local Emergency (112 API)
 
-### 3. 🏨 Hotel & Hospitality Ecosystem
-* **Automated Form C Wizard**: Seamless registration wizard for international and domestic travelers compliant with FRRO & Bureau of Immigration requirements.
-* **Biometric Room Key**: Contactless digital room access token generation.
-* **Simplified Bill Settlement**: Integrated hotel folio review and zero-touch checkout.
-
-### 4. 🔒 Privacy & Trust Center (DPDP Act 2023)
-* **Granular Consent Manager**: Explicit opt-in/opt-out permissions for airline, hotel, and security data sharing.
-* **Immutable Audit Trail**: Transparent log of all identity verifications and data access requests.
-
-### 5. 🌍 Dynamic Localization & Mobile Desktop Viewport
-* **Multilingual i18n**: Seamless switching between **English**, **Hindi**, and **Bengali**.
-* **Force-Desktop Mobile Controller**: Custom JavaScript viewport controller in `index.html` ensuring mobile devices render high-density Desktop UI layouts (`width=1280`) by default.
+    User->>App: 1. Press Emergency SOS Panic Button
+    App->>GPS: 2. Fetch High-Precision Coordinates & Terminal Zone
+    GPS-->>App: 3. Return Exact Latitude, Longitude & Gate Sector
+    App->>Broker: 4. Broadcast High-Priority Alert Payload
+    Broker->>SOS: 5. Process Emergency Queue
+    SOS->>CISF: 6. Dispatch Nearest Security Unit (Terminal Mesh)
+    SOS->>Police: 7. Trigger Direct API 112 Call Out
+    SOS-->>App: 8. Display Live Responder Distance & Status Tracker
+```
 
 ---
 
-## 🛠 Tech Stack
+## ✨ Enterprise Feature Matrix
 
-| Domain | Technology / Tool | Purpose |
+### 1. 🛂 Biometric Multi-Credential Identity Vault
+* **W3C Verifiable Credentials**: Native support for Aadhaar, Indian Passport, DigiLocker, and IATA One ID.
+* **Canvas Biometric Scanner**: Interactive face-scanning visualizer (`FaceIdAnimation.jsx`) with dynamic biometric vector overlays.
+* **Cryptographic Auto-Purge**: Automatic session destruction upon transit completion.
+
+### 2. ✈️ Aviation Telemetry & Terminal Navigation
+* **Live Flight Radar**: Track flight status, gate changes, and departure countdowns.
+* **Smart Airport Wayfinding**: Turn-by-turn interactive map (`SmartAirportMap.jsx`) for airport gates, lounges, and baggage carousels.
+* **Price Intelligence Engine**: Predictive fare analytics (`PriceIntelligence.jsx`) and flight trend analysis.
+
+### 3. 🧳 IoT Baggage Tracking & GPS Telematics
+* **RFID & BLE Mesh**: Real-time baggage location updates from check-in counter to cargo hold and arrival belt.
+* **Baggage Discrepancy Alerts**: Instant push notifications if luggage is misrouted or delayed.
+
+### 4. 🏨 Hospitality Ecosystem & Bureau of Immigration Integration
+* **Automated Form C Wizard**: One-tap generation of Bureau of Immigration Form C (`FormCWizard.jsx`) for domestic and foreign travelers.
+* **Biometric Keyless Room Entry**: Encrypted NFC/QR room access keys.
+* **Zero-Touch Folio Checkout**: Seamless bill payment (`HotelBillPayments.jsx`) and automated invoice generation.
+
+### 5. 🔒 Security, Data Privacy & DPDP Act 2023 Compliance
+* **Granular Consent Manager**: Total passenger control (`ConsentManager.jsx`) over which entities (airlines, hotels, security) can access data.
+* **Zero Central Biometric Storage**: Zero-knowledge proof architecture ensures plaintext facial data is never stored centrally.
+* **Right to be Forgotten**: One-tap data wipe enforcing DPDP Act 2023 regulations.
+
+### 6. 🌐 Dynamic Viewport & Multilingual Localization
+* **Force-Desktop Mobile Controller**: Custom JavaScript viewport engine in `index.html` ensuring mobile devices render high-density Desktop UI layouts (`width=1280`) by default.
+* **Multilingual i18n**: Real-time language switching across **English**, **Hindi**, and **Bengali**.
+
+---
+
+## 🌐 External API Integrations Table
+
+| Integration | Category | API Protocol | Functionality |
+| :--- | :--- | :--- | :--- |
+| **UIDAI Aadhaar API** | Identity | REST / XML Sign | E-KYC & Demographic Identity Verification |
+| **DigiLocker / Passport Seva** | Credentials | OAuth2 / JSON | Verifiable Passport Document Extraction |
+| **IATA One ID Registry** | Aviation | gRPC / JSON-LD | International Biometric Interoperability |
+| **Bureau of Immigration (FRRO)** | Compliance | SOAP / REST | Automated Hotel Form C Registration |
+| **Amadeus / Sabre GDS** | Flights | REST / WebHooks | Real-time Flight Schedules & Gate Telemetry |
+| **Emergency 112 API** | Safety | Telematics WebHook | Automated CISF & Police GPS Emergency Dispatch |
+| **Razorpay / UPI Intent** | Payments | WebHook / HTTPS | Tokenized Hotel & Flight Payment Settlement |
+
+---
+
+## 🛠 Tech Stack & Infrastructure
+
+| Layer | Technology | Description |
 | :--- | :--- | :--- |
-| **Frontend Core** | React 18/19, Vite 8 | Declarative component engine & lightning-fast ESM bundling |
-| **Routing** | React Router DOM v7 | Client-side Single Page Application (SPA) routing |
-| **Styling** | Custom Vanilla CSS3 | Glassmorphic design tokens, HSL color variables, CSS Grid |
-| **Icons** | Lucide React | Modern, lightweight SVG iconography |
-| **Localization** | `i18next`, `react-i18next` | Internationalization dictionary framework |
-| **Hosting & CDN** | Vercel Edge Network | 24/7 Global static hosting & SPA rewrite engine |
-| **CI/CD** | GitHub Actions | Automated build and deployment pipelines |
+| **Frontend Framework** | React 19.2 + Vite 8.2 | Component engine & ultra-fast HMR ESM bundler |
+| **Routing** | React Router DOM v7 | Single Page Application client-side routing |
+| **Design System** | Custom Vanilla CSS3 | Glassmorphism, HSL variable tokens, CSS Grid |
+| **Icons** | Lucide React | Modern SVG vector icons |
+| **Localization** | `i18next`, `react-i18next` | Multilingual dictionary translation engine |
+| **Hosting & Edge CDN** | Vercel Global CDN | 24/7 Production hosting with SPA rewrite engine |
+| **CI/CD Automation** | GitHub Actions | Automated build, test, and deploy workflow |
 
 ---
 
-## 📂 Repository Architecture
+## 📁 Repository Architecture
 
 ```text
 Digiyatra-2.0/
@@ -181,8 +265,9 @@ Digiyatra-2.0/
 ├── .gitignore                    # Git file exclusion rules
 ├── .vercelignore                 # Vercel deployment exclusion rules
 ├── index.html                    # Entry HTML & Desktop Viewport Engine
+├── LICENSE                       # MIT License File
 ├── package.json                  # Dependencies & build scripts
-├── README.md                     # Technical Documentation
+├── README.md                     # Comprehensive Architecture Documentation
 ├── vercel.json                   # Vercel SPA Rewrite Rules
 └── vite.config.js                # Vite build & dev server config
 ```
@@ -195,7 +280,7 @@ Digiyatra-2.0/
 * **Node.js**: v18.0.0 or higher
 * **npm**: v9.0.0 or higher
 
-### Local Development Installation
+### Local Development Setup
 
 1. **Clone the Repository:**
    ```bash
@@ -221,18 +306,43 @@ Digiyatra-2.0/
 
 ---
 
-## 🌐 Live Deployment & Infrastructure
+## 🌐 Live Production Deployment
 
-The production application is deployed on Vercel's Global Edge Network, providing instant loading, automated SSL, and 24/7 availability.
+The production application is deployed globally on Vercel's Edge Network with automated SPA rewrite rules and 24/7 availability.
 
-* 🔗 **Live Production Application**: [https://digiyatra-2-0.vercel.app](https://digiyatra-2-0.vercel.app)
+* 🔗 **Live Production App**: [https://digiyatra-2-0.vercel.app](https://digiyatra-2-0.vercel.app)
 * 🔗 **GitHub Repository**: [https://github.com/Aniket-Das-2006/Digiyatra-2.0](https://github.com/Aniket-Das-2006/Digiyatra-2.0)
+
+---
+
+## ☕ Support & Buy Me A Coffee
+
+If you find this project inspiring, helpful, or visionary for India's digital transit infrastructure, consider supporting its developer! Every coffee fuels more open-source innovation, system architecture design, and high-performance engineering.
+
+<div align="center">
+
+<a href="https://www.buymeacoffee.com/aniketdas" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="220" style="border-radius: 12px; box-shadow: 0 8px 24px rgba(255,221,0,0.4);" />
+</a>
+
+<br/><br/>
+
+[![Sponsor Aniket Das](https://img.shields.io/badge/Sponsor%20Developer- Aniket%20Das-ff69b4?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/Aniket-Das-2006)
+[![Star this Repo](https://img.shields.io/badge/⭐%20Star%20Repo-DigiYatra--2.0-yellow?style=for-the-badge)](https://github.com/Aniket-Das-2006/Digiyatra-2.0/stargazers)
+[![Fork this Repo](https://img.shields.io/badge/🍴%20Fork%20Repo-DigiYatra--2.0-orange?style=for-the-badge)](https://github.com/Aniket-Das-2006/Digiyatra-2.0/network/members)
+
+</div>
+
+### 💖 Ways to Support:
+- ⭐️ **Star the Repository**: Show your appreciation on GitHub!
+- 🔀 **Fork & Contribute**: Submit Pull Requests, enhance modules, or fix issues.
+- ☕ **Buy Me a Coffee**: [buymeacoffee.com/aniketdas](https://www.buymeacoffee.com/aniketdas) to keep the project growing!
 
 ---
 
 ## ⚖️ License
 
-This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for complete details.
 
 ```text
 MIT License
@@ -243,7 +353,7 @@ Copyright (c) 2026 Aniket Das
 
 <div align="center">
 
-**Crafted with ❤️ by [Aniket Das](https://github.com/Aniket-Das-2006)**  
-*Building India's Digital Travel Infrastructure for Tomorrow.*
+**Built with passion by [Aniket Das](https://github.com/Aniket-Das-2006)**  
+*Revolutionizing India's Digital Travel Experience.*
 
 </div>
