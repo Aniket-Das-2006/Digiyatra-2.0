@@ -1,0 +1,93 @@
+.info-page {
+  display: flex;
+  background-color: #f8fafc;
+  min-height: calc(100vh - 72px);
+  margin-top: 72px; /* For fixed header */
+}
+
+.info-content-container {
+  flex: 1;
+  padding: 40px 60px;
+  max-width: 900px;
+}
+
+.info-header {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 20px;
+}
+
+.info-breadcrumbs {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.info-title {
+  font-size: 32px;
+  color: #0f172a;
+  font-weight: 800;
+  margin: 0;
+}
+
+.info-body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #334155;
+}
+
+.info-body h3 {
+  font-size: 22px;
+  color: #0f172a;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.info-body p {
+  margin-bottom: 20px;
+}
+
+.info-body ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.info-body li {
+  margin-bottom: 8px;
+}
+
+.info-alert {
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin: 24px 0;
+  border-left: 4px solid;
+}
+
+.info-alert.info {
+  background-color: #eff6ff;
+  border-color: #3b82f6;
+  color: #1e3a8a;
+}
+
+.info-alert.warning {
+  background-color: #fffbeb;
+  border-color: #f59e0b;
+  color: #92400e;
+}
+
+/* Scrollbar styling for sidebar */
+.docs-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.docs-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.docs-sidebar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+.docs-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

@@ -1,0 +1,688 @@
+/* ============================================================
+   DigiYatra AI Chat Assistant - Instagram & Futuristic UI Style
+   ============================================================ */
+
+.digiyatra-chat-root {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Text', sans-serif;
+}
+
+/* ============================================================
+   AI Flight Custom Logo Badge
+   ============================================================ */
+.ai-custom-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #ffffff; /* ensure white background for the logo */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 2px solid #38bdf8;
+}
+
+.mini-custom-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #ffffff;
+  border: 1px solid #38bdf8;
+}
+
+/* Floating Trigger Button */
+.digiyatra-chat-trigger {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.digiyatra-chat-trigger:hover .ai-custom-logo {
+  transform: scale(1.12);
+  box-shadow: 0 6px 16px rgba(56, 189, 248, 0.4);
+}
+
+.chat-trigger-pulse {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 10px;
+  height: 10px;
+  background: #22c55e;
+  border: 2px solid #09090b;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #22c55e;
+}
+
+/* ============================================================
+   Main Chat Window (Dark Theme & Animated Instagram Fluid Aura)
+   ============================================================ */
+.digiyatra-chat-window {
+  --bg-primary: #09090b;
+  --bg-header: rgba(9, 9, 11, 0.6);
+  --bg-footer: rgba(9, 9, 11, 0.7);
+  --bg-input: rgba(24, 24, 27, 0.9);
+  --bg-bot-bubble: rgba(24, 24, 27, 0.85);
+  --bg-card: rgba(9, 9, 11, 0.9);
+  --text-primary: #ffffff;
+  --text-secondary: #e4e4e7;
+  --text-muted: #a1a1aa;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --overlay-bg-center: rgba(9, 9, 11, 0.2);
+  --overlay-bg-edge: rgba(9, 9, 11, 0.85);
+
+  width: 410px;
+  height: 620px;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 80px);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 36px;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 50px rgba(168, 85, 247, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  animation: chatWindowPop 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.digiyatra-chat-window.theme-light {
+  --bg-primary: #ffffff;
+  --bg-header: rgba(255, 255, 255, 0.75);
+  --bg-footer: rgba(255, 255, 255, 0.85);
+  --bg-input: #f4f4f5;
+  --bg-bot-bubble: #f4f4f5;
+  --bg-card: #ffffff;
+  --text-primary: #09090b;
+  --text-secondary: #18181b;
+  --text-muted: #71717a;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-subtle: rgba(0, 0, 0, 0.05);
+  --overlay-bg-center: rgba(255, 255, 255, 0.3);
+  --overlay-bg-edge: rgba(255, 255, 255, 0.9);
+}
+
+.digiyatra-chat-window.is-expanded {
+  width: 540px;
+  height: 750px;
+}
+
+@keyframes chatWindowPop {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ============================================================
+   Animated Fluid Gradient Mesh Background (Instagram Musical Flow)
+   ============================================================ */
+.fluid-gradient-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.gradient-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.35;
+  will-change: transform;
+}
+
+.blob-1 {
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, #d946ef, #ec4899);
+  top: -40px;
+  left: -40px;
+  animation: fluidFlow1 12s infinite alternate ease-in-out;
+}
+
+.blob-2 {
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, #8b5cf6, #3b82f6);
+  bottom: -60px;
+  right: -60px;
+  animation: fluidFlow2 15s infinite alternate ease-in-out;
+}
+
+.blob-3 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #f43f5e, #a855f7);
+  top: 40%;
+  left: 30%;
+  animation: fluidFlow3 10s infinite alternate ease-in-out;
+}
+
+.fluid-mesh-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, var(--overlay-bg-center) 0%, var(--overlay-bg-edge) 100%);
+}
+
+@keyframes fluidFlow1 {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  50% { transform: translate(60px, 80px) scale(1.2) rotate(180deg); }
+  100% { transform: translate(-30px, 40px) scale(0.9) rotate(360deg); }
+}
+
+@keyframes fluidFlow2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-80px, -60px) scale(1.25); }
+  100% { transform: translate(40px, -40px) scale(0.95); }
+}
+
+@keyframes fluidFlow3 {
+  0% { transform: translate(0, 0) scale(0.9); }
+  50% { transform: translate(-40px, 50px) scale(1.3); }
+  100% { transform: translate(50px, -30px) scale(1); }
+}
+
+/* ============================================================
+   Minimalist Header (No Written Name - Icon Only)
+   ============================================================ */
+.chat-header {
+  position: relative;
+  z-index: 2;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-header);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.header-ai-logo-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-title-text {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-action-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.header-action-btn:hover {
+  background: var(--border-color);
+  color: var(--text-primary);
+}
+
+/* ============================================================
+   Chat Body & Message Bubbles
+   ============================================================ */
+.chat-body {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  padding: 20px 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chat-body::-webkit-scrollbar {
+  width: 4px;
+}
+.chat-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+
+.chat-message-row {
+  display: flex;
+  gap: 10px;
+  max-width: 88%;
+}
+
+.msg-user {
+  align-self: flex-end;
+  flex-direction: row;
+}
+
+.msg-bot {
+  align-self: flex-start;
+}
+
+.msg-ai-avatar {
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.user-avatar-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f43f5e, #fb7185);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 4px;
+  box-shadow: 0 0 12px rgba(244, 63, 94, 0.4);
+}
+
+.msg-bubble-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.msg-bubble {
+  padding: 14px 18px;
+  border-radius: 24px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  position: relative;
+}
+
+/* Vibrant Pink/Purple Gradient for User Message */
+.msg-user .msg-bubble {
+  background: linear-gradient(135deg, #c026d3 0%, #db2777 50%, #f43f5e 100%);
+  color: #ffffff;
+  border-bottom-right-radius: 6px;
+  box-shadow: 0 8px 24px rgba(219, 39, 119, 0.35);
+}
+
+/* Dark Minimal Card for Bot Message */
+.msg-bot .msg-bubble {
+  background: var(--bg-bot-bubble);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  border-bottom-left-radius: 6px;
+}
+
+.msg-text p {
+  margin: 0 0 8px 0;
+}
+.msg-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   Bot Action Toolbar (Copy, Like, Speaker, Refresh)
+   ============================================================ */
+.bot-action-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.action-icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.action-icon-btn:hover {
+  color: var(--text-primary);
+  background: var(--border-color);
+}
+
+.action-icon-btn.is-active {
+  color: #ec4899;
+}
+
+.action-icon-btn.is-speaking {
+  color: #38bdf8;
+  animation: pulseSpeech 1s infinite alternate;
+}
+
+@keyframes pulseSpeech {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.2); }
+}
+
+.active-icon {
+  color: #22c55e;
+}
+
+/* ============================================================
+   Interactive Feature Cards
+   ============================================================ */
+.chat-card {
+  margin-top: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 14px 16px;
+}
+
+.chat-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.badge-status-on-time {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.badge-status-loaded {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.chat-card-route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-top: 1px dashed var(--border-subtle);
+  border-bottom: 1px dashed var(--border-subtle);
+}
+
+.airport-code {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: block;
+}
+
+.time {
+  font-size: 0.78rem;
+  color: #a1a1aa;
+}
+
+.route-animated-line {
+  position: relative;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, #ec4899, #a855f7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flying-plane {
+  position: absolute;
+  color: #ec4899;
+  font-size: 0.8rem;
+  animation: planeFly 3s infinite linear;
+}
+
+@keyframes planeFly {
+  0% { transform: translateX(-25px); }
+  100% { transform: translateX(25px); }
+}
+
+.chat-card-footer {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+.baggage-tracker-mini {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.baggage-tracker-mini .step {
+  flex: 1;
+  font-size: 0.72rem;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #71717a;
+  text-align: center;
+}
+
+.baggage-tracker-mini .step.complete {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
+
+.baggage-tracker-mini .step.active {
+  background: rgba(236, 72, 153, 0.2);
+  color: #f472b6;
+  font-weight: 700;
+}
+
+.trust-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.trust-card-grid .lbl {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.trust-card-grid .val {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #c026d3;
+}
+
+.hotel-sub {
+  font-size: 0.78rem;
+  color: #fbbf24;
+}
+
+/* Suggested Chips */
+.suggested-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.chip-btn {
+  background: var(--bg-bot-bubble);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.chip-btn:hover {
+  background: linear-gradient(135deg, rgba(219, 39, 119, 0.3), rgba(168, 85, 247, 0.3));
+  border-color: rgba(236, 72, 153, 0.6);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Typing Indicator */
+.typing-bubble {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 14px 20px !important;
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  background: #a1a1aa;
+  border-radius: 50%;
+  animation: typingPulse 1.4s infinite ease-in-out both;
+}
+.typing-dot:nth-child(1) { animation-delay: 0s; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingPulse {
+  0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); }
+  40% { opacity: 1; transform: scale(1.2); }
+}
+
+/* ============================================================
+   Input Bar Pill (Matching Screenshot UI)
+   ============================================================ */
+.chat-footer {
+  position: relative;
+  z-index: 2;
+  padding: 16px 20px;
+  background: var(--bg-footer);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.chat-input-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+  padding: 6px 8px 6px 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+}
+
+.chat-input-pill:focus-within {
+  border-color: #ec4899;
+  box-shadow: 0 0 0 2px rgba(236, 72, 153, 0.3), 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.chat-input-text {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 0.92rem;
+}
+
+.chat-input-text::placeholder {
+  color: var(--text-muted);
+}
+
+.input-actions-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.input-icon-btn:hover {
+  color: var(--text-primary);
+  background: var(--border-color);
+}
+
+.input-send-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ec4899, #a855f7);
+  border: none;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 12px rgba(236, 72, 153, 0.4);
+}
+
+.input-send-btn:hover:not(:disabled) {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.7);
+}
+
+.input-send-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+@media (max-width: 640px) {
+  .desktop-only { display: none; }
+  .digiyatra-chat-window {
+    width: calc(100vw - 24px);
+    right: 12px;
+    bottom: 12px;
+    height: calc(100vh - 70px);
+    border-radius: 28px;
+  }
+}

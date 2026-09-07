@@ -1,0 +1,347 @@
+/* ============================================================
+   Price Intelligence Dashboard
+   ============================================================ */
+
+.pi-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.pi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.pi-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.pi-route {
+  font-size: 12px;
+  color: #64748b;
+  margin: 2px 0 0;
+  font-weight: 600;
+}
+
+.pi-current-price {
+  text-align: right;
+}
+
+.pi-price-label {
+  display: block;
+  font-size: 10px;
+  color: #94a3b8;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.pi-price-value {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+/* Recommendation */
+.pi-recommendation {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid;
+  margin-bottom: 16px;
+}
+
+.pi-rec-icon {
+  margin-top: 2px;
+}
+
+.pi-rec-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.pi-rec-text {
+  display: block;
+  font-size: 11px;
+  color: #475569;
+  margin-top: 2px;
+}
+
+/* Stats */
+.pi-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.pi-stat {
+  text-align: center;
+  padding: 10px 6px;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.pi-stat-label {
+  display: block;
+  font-size: 9px;
+  color: #94a3b8;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.pi-stat-value {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-top: 2px;
+}
+
+/* Graph */
+.pi-graph-section {
+  margin-bottom: 16px;
+}
+
+.pi-graph-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+  margin: 0 0 10px;
+}
+
+.pi-graph {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 120px;
+  padding: 0 4px;
+}
+
+.pi-bar-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.pi-bar {
+  width: 100%;
+  min-width: 20px;
+  border-radius: 6px 6px 0 0;
+  background: linear-gradient(to top, #dbeafe, #93c5fd);
+  position: relative;
+  transition: height 0.5s ease;
+  cursor: pointer;
+}
+
+.pi-bar:hover {
+  background: linear-gradient(to top, #bfdbfe, #60a5fa);
+}
+
+.pi-bar-current {
+  background: linear-gradient(to top, #0a4cd9, #6366f1) !important;
+}
+
+.pi-bar-lowest {
+  background: linear-gradient(to top, #bbf7d0, #16a34a) !important;
+}
+
+.pi-bar-tooltip {
+  display: none;
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.pi-bar:hover .pi-bar-tooltip {
+  display: block;
+}
+
+.pi-bar-label {
+  font-size: 8px;
+  color: #94a3b8;
+  margin-top: 4px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Volatility */
+.pi-volatility {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #475569;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.pi-vol-bar {
+  flex: 1;
+  height: 6px;
+  background: #f1f5f9;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.pi-vol-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.pi-vol-low { width: 25%; background: #16a34a; }
+.pi-vol-medium { width: 55%; background: #f59e0b; }
+.pi-vol-high { width: 85%; background: #ef4444; }
+
+.pi-vol-label {
+  font-weight: 700;
+  min-width: 50px;
+}
+
+/* Alerts */
+.pi-alerts-section {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 14px;
+}
+
+.pi-alerts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.pi-alerts-header h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.pi-add-alert-btn {
+  padding: 4px 12px;
+  border-radius: 8px;
+  border: 1px solid #dbeafe;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pi-add-alert-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  animation: fadeInUp 0.2s ease;
+}
+
+.pi-alert-input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  font-size: 12px;
+  outline: none;
+}
+
+.pi-alert-input:focus {
+  border-color: #0a4cd9;
+}
+
+.pi-alert-submit {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: none;
+  background: #0a4cd9;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.pi-alert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pi-alert-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+.pi-alert-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.pi-alert-route {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.pi-alert-threshold {
+  font-size: 10px;
+  color: #64748b;
+}
+
+.pi-alert-remove {
+  background: none;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.pi-disclaimer {
+  margin: 12px 0 0;
+  font-size: 9px;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,517 @@
+DigiYatra 2.0
+Ecosystem Redesign & Global Expansion Blueprint
+Stakeholders · Service architecture · Trust & consent · Data
+ownership · Interoperability · Governance · Major/minor problem–solution matrix · Hotel & supply-chain
+verticals · Two-tab app architecture
+Prepared for Aniket's DigiYatra product initiative
+Grounded in Ministry of Civil Aviation, DigiYatra Foundation, AAI, IATA, Delhi & Kerala High Court filings,
+and Internet Freedom Foundation reporting through August 2026
+Starting point Your planning-diary pages of 8–9 January 2026
+Prepared on 1 September 2026
+From two pages of a physical planning diary to a build-ready ecosystem spec: what DigiYatra already gets
+right, where it's genuinely exposed, and how the two new verticals below extend it responsibly.
+
+-- 1 of 13 --
+
+Contents
+00 Executive summary & a reality-check on your notes
+What's confirmed, what's corrected, and what's changed since 8–9 January 2026.
+01 Ecosystem map
+Stakeholders, architecture, trust boundaries, data ownership, authentication, consent, interoperability,
+governance, operations, and public benefit — ten angles, one map.
+02 Problem–solution matrix
+Eight major (systemic/legal) and eight minor (usability) problems, each sourced and each with a shippable fix.
+03 New verticals: hotel chains & supply chain
+Reusing the same verified identity for hotel check-in and airport logistics, without widening the trust boundary.
+04 App architecture
+Making your Authentication / Utility two-tab decision carry all of the above without becoming a third tab.
+05 Public policy, cost, and speed
+Where to align with regulation early, where to reuse India Stack rails, and the real benchmark for “fast.”
+06 Suggested build order
+Four phases that put trust and interoperability first, not last.
+Sources & further reading
+Everything above, grouped by theme, for when you need to go back to a primary source.
+DigiYatra 2.0 — Ecosystem Blueprint Prepared for Aniket
+Page 1 of 12	September 2026 draft
+
+-- 2 of 13 --
+
+00
+Executive Summary
+This turns your two planning-diary pages into a full ecosystem redesign for DigiYatra: stakeholders, service
+architecture, trust boundaries, data ownership, authentication, consent flows, interoperability, governance
+touchpoints, operational challenges and public benefit (Section 1) — followed by a major/minor problem–solution
+matrix (Section 2), the hotel-chain and supply-chain verticals you asked to add (Section 3), a review of your
+two-tab Authentication/Utility structure (Section 4), and policy, cost and speed considerations (Section 5).
+Section 6 turns all of it into a build order.
+Everything is checked against Ministry of Civil Aviation announcements, DigiYatra Foundation policy documents,
+the two live High Court matters, IATA's global standards work, and Internet Freedom Foundation's reporting,
+current through late August 2026 — not just general familiarity with the app.
+A reality-check on your notes, before we go further
+The 29.1% figure is real — but it isn't a data leak. A January 2024 LocalCircles survey of roughly 21,000
+Delhi-airport passengers found 29% had signed up for DigiYatra without realising it, and only 15% understood the
+benefits and risks before signing up. It's a consent problem at the registration kiosk, not a breach of stored data —
+and that distinction changes the fix (see M2 in Section 2).
+The '30-day retention' note is real too, and it's not a rumour — it's in DigiYatra's own policy. Facial
+biometrics are purged within 24 hours of flight departure, but non-biometric travel logs (your DigiYatra ID, PNR
+hash, flight details) are retained for 30 days for audit purposes. The Internet Freedom Foundation has flagged
+exactly this gap between the headline claim and the fine print (see M3).
+Your '30 May 2026 — 10Cr — 38 airports' note matches the official record closely. The Ministry of Civil
+Aviation announced on 30 May 2026 that DigiYatra had crossed 10 crore passenger journeys across 38 airports,
+with 2.4 crore app downloads, and average entry processing cut from 15 seconds to 5. Good instinct to log it.
+One thing has changed since you wrote those notes. DigiYatra Foundation is now in Delhi High Court against
+its former technology vendor, Data Evolve Solutions, over who actually owns the platform and the passenger data
+flowing through it. That turns 'data ownership' from a design choice into a live legal question — see Section 1.4.
+DigiYatra 2.0 — Ecosystem Blueprint Prepared for Aniket
+Page 2 of 12	September 2026 draft
+
+-- 3 of 13 --
+
+01
+Ecosystem Map
+1.1 Stakeholders
+DigiYatra is not one company's product — it's a federation. Any redesign has to keep all of these parties working
+from the same rulebook, including the two new verticals you want to add.
+Stakeholder Role in the ecosystem Primary interest / risk
+DigiYatra Foundation
+(DYF)
+Nodal Section-8 not-for-profit joint venture;
+owns and operates the “Digi Yatra Central
+Ecosystem” platform.
+Needs adoption and trust; currently exposed by
+vendor litigation and by having no RTI
+accountability.
+Airports Authority of
+India (AAI)
+Largest DYF shareholder (26%); operates
+most non-metro airports.
+Wants national rollout pace balanced against cost
+and MoCA policy alignment.
+Private airport operators
+(DIAL, MIAL, BIAL, HIAL,
+CIAL)
+Co-shareholders; run the busiest metro
+airports (Delhi, Mumbai, Bengaluru,
+Hyderabad, Kochi).
+Passenger throughput and SLAs at their own
+terminals; commercial upside from ecosystem
+partners.
+Ministry of Civil Aviation
+(MoCA)
+Policy owner; coordinates DYF and reports
+milestones publicly.
+Public-benefit narrative; hitting its own
+50-crore-by-2030 traffic projection.
+BCAS (Bureau of Civil
+Aviation Security)
+Issues the security circulars biometric
+boarding runs under.
+No security regression versus manual document
+checks.
+Airlines (DCS/PSS
+systems)
+Consume the verified boarding-pass/identity
+signal at check-in and gate.
+Faster boarding with fewer gate agents; cost of
+integrating each airline's own systems.
+Passengers, domestic &
+international
+The self-sovereign identity holders the whole
+system exists for.
+Speed and privacy, but also a genuine, equally
+visible opt-out lane.
+DigiLocker / MeitY Supplies the underlying Aadhaar e-KYC rail
+used at onboarding.
+Its own security posture becomes a direct
+DigiYatra dependency.
+FRT vendors (e.g. NEC;
+formerly Data Evolve
+Solutions)
+Build and operate the e-gates and backend
+matching engine.
+Contract and IP terms — now literally the subject
+of a court case.
+Internet Freedom
+Foundation &
+civil-society watchdogs
+External accountability pressure; files RTIs
+and PILs.
+Function creep, exclusion errors, and the lack of
+statutory backing.
+Judiciary (Delhi HC,
+Kerala HC)
+Adjudicating platform/data ownership and a
+PIL on the stalled Data Protection Board.
+Sets the legal ceiling every other stakeholder
+currently operates under.
+New: hotel chains & the
+Bureau of Immigration /
+FRRO
+Handle foreign-guest compliance (Form C)
+today, entirely on paper or separate portals.
+Duplicate KYC today; upside from reusing one
+verified-ID rail.
+New: airport cargo &
+ground-handling
+operators
+Run baggage, catering, fuel and cargo
+logistics airside.
+Currently manual gate-passes and paper-heavy
+customs handoffs.
+1.2 Service Architecture
+The core flow is a five-step relay: Aadhaar e-KYC creates a one-time credential; the phone becomes the vault; a
+QR/token hands a proof (not the underlying biometric) to the e-gate; the airport's local server handles the
+DigiYatra 2.0 — Ecosystem Blueprint Prepared for Aniket
+Page 3 of 12	September 2026 draft
+
+-- 4 of 13 --
+
+transaction and is supposed to purge it; and the airline's own departure-control system does the final boarding
+check. A manual lane has to exist in parallel everywhere, because the scheme is legally voluntary.
+Figure 1. Current DigiYatra architecture, redrawn from Ministry of Civil Aviation, AAI and court-filing descriptions.
+1.3 Trust Boundaries
+Four boundaries matter, and each new feature you add either respects them or quietly widens them:
+• Device boundary — the phone-held wallet is meant to be the outermost trust root; nothing biometric is
+supposed to leave it.
+• Airport-local-server boundary — where a temporary token touches infrastructure DYF doesn't fully control
+airport-by-airport.
+• Vendor boundary — third-party FRT/backend contractors. This is exactly where the 2024 breach rumours took
+hold: a legacy vendor was alleged to have an AWS-hosted endpoint receiving passenger data, contradicting the
+“never leaves your phone” claim.
+• Ecosystem-partner boundary — hotel/cab/lounge partners who can already receive contact details on an
+opt-in basis today, and would receive more under your hotel-chain vertical.
+Design rule for the two new verticals: extend the identity, don't extend the vault. A hotel or a baggage handler
+should be able to verify a credential without ever holding the face embedding itself.
+1.4 Data Ownership
+This is no longer theoretical. On 29 October 2025, the Delhi High Court framed formal issues for trial in Digi
+Yatra Foundation v. Data Evolve Solutions Pvt. Ltd. — a commercial dispute over who owns the Digi Yatra
+Central Ecosystem platform itself, and the intellectual property in the services it renders. That single case will
+determine practical control over the data pipeline that everything else in this document sits on top of.
+The second half of the ownership problem is structural: because DYF is registered as a private Section-8
+company, it falls outside the Right to Information Act, even though it runs infrastructure that is fast becoming
+mandatory-adjacent for millions of travellers. Even a favourable court outcome wouldn't, by itself, give the public
+a way to compel disclosure of day-to-day data handling.
+DigiYatra 2.0 — Ecosystem Blueprint Prepared for Aniket
+Page 4 of 12	September 2026 draft
+
+-- 5 of 13 --
+
+Recommendation: don't inherit this ambiguity. Whatever entity operates your version of these features should
+be named as data custodian in a public-facing charter from day one, with vendor contracts that fix IP and data
+ownership up front — the exact clause the current dispute shows was left unclear.
+1.5 Authentication Mechanisms
+Today: Aadhaar number plus OTP e-KYC via DigiLocker, a live selfie converted to an on-device face embedding
+(reportedly a 512-dimension vector, AES-256 encrypted), and a temporary QR/token handed to the e-gate for a
+live camera match. That's a single credential type for a single nationality — OCI holders and foreign passport
+holders cannot enrol as of 2026, and there is no non-biometric second factor if a face match fails repeatedly,
+beyond a full walk back to the manual lane.
+Recommendation: tiered onboarding — Aadhaar e-KYC OR passport-and-visa OR a DigiLocker-issued
+document, all normalised to the same on-device credential format, plus an app PIN or passkey as a fallback
+factor so one failed face-match doesn't cost the entire time saving.
+1.6 Consent Flows
+Consent is nominally required before any biometric capture, but the January 2024 LocalCircles findings
+described above, plus complaints raised in Parliament about kiosk staff pressuring passengers to sign up, show
+the practice hasn't matched the policy. The Foundation's main fix so far has been deploying human “Digi
+Buddies” to advise passengers at the kiosk — a people-process patch on what is fundamentally an interface
+problem.
+Recommendation: move primary consent into the app itself rather than a kiosk conversation — a layered,
+plain-language “what, why, how long, who else” screen before any capture, a persistent toggle with one-tap
+revocation, and a consent receipt saved into the user's own wallet so they hold their own proof of what they
+agreed to.
+1.7 Interoperability Requirements
+• Aadhaar / DigiLocker — already integrated for onboarding.
+• Airline DCS/PSS systems — integrated today, but per-airline, with no shared standard.
+• Multiple e-gate hardware vendors within India (including NEC) — no confirmed shared token format across
+vendors yet.
+• IATA One ID — the real global benchmark, built on W3C Verifiable Credentials and ICAO's Digital Travel
+Credential standard (Doc 9303). In April 2026, Japan Airlines passengers transferred from Tokyo through Hong
+Kong to London using a single digital identity recognised by Hong Kong International, Heathrow, and British
+Airways — that is the bar the Foundation's own 2025 Changi and Dubai MoUs need to clear.
+• RailOne — Indian Railways' own biometric pilot; a natural domestic interoperability target so one credential
+works at both airports and stations.
+• New: hotel PMS systems and the Bureau of Immigration's e-FRRO / Form C portal.
+• New: airport cargo/customs systems and RFID/IoT baggage backbones.
+Recommendation: adopt the IATA One ID token format from the start for anything you build, even before
+international expansion is live. Retrofitting a proprietary token later is exactly the kind of rework the Foundation
+now faces with its own Changi/Dubai pilots.
+1.8 Governance Touchpoints
+• MoCA sets policy; AAI is both a 26% DYF shareholder and the country's largest airport operator/regulator —
+worth designing around as a structural conflict of interest, not just an org-chart line.
+• BCAS issues the operating security circulars.
+• The DPDP Act 2023 is the general law, but the Data Protection Board meant to enforce it is, per a pending
+Kerala High Court PIL, still not fully operational.
+DigiYatra 2.0 — Ecosystem Blueprint Prepared for Aniket
+Page 5 of 12	September 2026 draft
+
+-- 6 of 13 --
+
+• Delhi HC (ownership) and Kerala HC (biometric-privacy PIL) are, in effect, doing the job a dedicated statute
+would otherwise do.
+• DYF's Section-8 status keeps it outside the RTI Act.
+Recommendation: don't wait for the state to close these gaps top-down. Build the transparency the law doesn't
+yet require — that becomes a trust advantage for your version of the product (see M4, Section 2).
+1.9 Operational Challenges
+• Tier-3/smaller-airport hardware and connectivity lag — the Foundation's own 2026 rollout batches are still
+activating roughly 60 smaller stations.
+• Peak-hour camera throughput, plus accuracy variance across lighting, masks and demographics.
+• Staff training at scale as new airports and features roll out.
+• Inconsistent public messaging about what's voluntary versus mandatory — as recently as June 2026, credible
+outlets disagreed on whether international-transit use had become compulsory at four metro airports. That
+confusion is itself an operational failure, not just a communications one.
+• Several other digital initiatives (self-baggage-drop, ATC automation, the AirSewa grievance portal, AI-driven
+“digital twins”) are rolling out in parallel, raising real integration and support load.
+1.10 Expected Public Benefits
+• Verified time savings at national scale: average entry processing cut from about 15 seconds to about 5, across
+100 million-plus journeys.
+• Less paper and physical document handling.
+• Better capacity planning as India heads toward its own projected 50-crore-passenger year by 2030.
+• A reusable trust rail that, if the two new verticals are built carefully, extends the same public benefit to
+hospitality compliance and airport logistics — not just the security queue.
+DigiYatra 2.0 — Ecosystem Blueprint Prepared for Aniket
+Page 6 of 12	September 2026 draft
+
+-- 7 of 13 --
+
+02
+Problem–Solution Matrix
+Every row below is a real, sourced problem — not a hypothetical — split into what's systemic (major) and what's
+day-to-day friction (minor), each with a solution sized to actually ship.
+# Problem Proposed solution
+MAJOR PROBLEMS — systemic trust, legal & policy risk
+M1 Data ownership is legally unsettled. The Delhi HC
+case between DYF and its former vendor is deciding
+who owns the platform and the data on it.
+Name a statutory data custodian up front for anything you build;
+fix IP and data-ownership clauses in every vendor contract
+before launch, not after a dispute.
+M2 Consent has been bypassed in practice. A 2024
+survey found 29% of Delhi passengers had signed up
+without realising it, and only 15% understood the
+risks and benefits first.
+Replace kiosk-driven sign-up with an in-app, multi-step consent
+screen (what / why / how long / who else) plus a saved consent
+receipt in the user's own wallet.
+M3 Stated retention doesn't match the fine print: the
+24-hour purge headline covers biometrics only; travel
+logs (ID, PNR hash, flight details) are kept 30 days,
+exactly as IFF has flagged.
+One single, plain-language retention table inside the app (what /
+where / how long / who can access), shown before first use and
+revisited in a Trust Center screen.
+M4 No independent oversight: DYF's private Section-8
+status keeps it outside the RTI Act, and no third-party
+audits are published.
+Publish your own annual transparency report (uptime,
+complaints, incidents), commission independent security audits,
+and run a bug-bounty programme as a built-in Trust Center.
+M5 Voluntary-vs-mandatory messaging is inconsistent —
+reputable outlets disagreed as recently as June 2026
+on whether international-transit use had become
+compulsory at four airports.
+One canonical, versioned policy page in-app and on the web,
+with a change-log; any policy change triggers explicit re-consent,
+never silent enforcement.
+M6 Enrolment is Aadhaar-and-Indian-passport only —
+OCI holders, foreign nationals and non-Aadhaar
+residents can't use it in 2026, the exact gap your own
+notes flagged.
+Multi-credential onboarding: Aadhaar e-KYC OR passport/visa
+OR a DigiLocker-issued document, all verified to an equal
+assurance level.
+M7 No enforceable cross-vendor standard — different
+FRT vendors run different airports with no confirmed
+shared token format.
+Adopt IATA One ID (W3C Verifiable Credentials + ICAO's Digital
+Travel Credential) so any compliant gate, in India or at
+Changi/Dubai, can verify the same credential.
+M8 Public trust has already taken real hits: 2024 vendor
+breach rumours, 2025 phishing clones of the app,
+and an unrelated DigiLocker sign-in flaw that put
+millions of records at risk.
+A certificate-pinned official app with a domain-verification
+banner, proactive alerts about known fake apps, non-sequential
+IDs, and mandatory penetration testing before every major
+release.
+MINOR PROBLEMS — usability & day-to-day friction
+m1 UI has been inconsistent across relaunches — the
+Foundation itself swapped app versions and vendors
+in 2024.
+One design-token library across both tabs using your own
+glass-morphism/minimal sketch, WCAG-AA contrast, and a dark
+mode.
+m2 Face-match fails in poor lighting, with masks, or for
+some demographics, sending people back to a slow
+manual line.
+Tune liveness/match models across diverse skin tones and
+lighting; fall back to a QR check in the same lane instead of a
+separate one.
+m3 No live flight, gate, or baggage-belt status in-app — a
+gap you flagged yourself.
+A flight-tracking module pulling airline/airport open feeds, shown
+in the Utility tab.
+DigiYatra 2.0 — Ecosystem Blueprint Prepared for Aniket
+Page 7 of 12	September 2026 draft
+
+-- 8 of 13 --
+
+# Problem Proposed solution
+m4 Each family member needs a separate enrolment
+even under one PNR — also flagged in your notes.
+Group-PNR linking: one adult verifies accompanying family in a
+single flow; each still gets their own on-device credential.
+m5 No offline fallback if the airport network drops. A short-lived signed offline token cached on-device, checked
+locally by the e-gate, synced once connectivity returns.
+m6 Limited language coverage, though the Foundation
+has said this is being worked on.
+Ship all 22 scheduled languages plus the languages needed for
+the Changi/Dubai pilot routes, with voice assist.
+m7 No in-app SOS or emergency option — another gap
+from your notes.
+One-tap SOS in the Utility tab, geofenced to the nearest airport
+security control room, pre-filled with the user's verified identity.
+m8 Smaller Tier-3 airports lag on hardware and
+connectivity.
+A lightweight kiosk mode for lower-spec hardware with periodic
+sync, sequenced against the Foundation's own published rollout
+batches rather than duplicating them.
+DigiYatra 2.0 — Ecosystem Blueprint Prepared for Aniket
+Page 8 of 12	September 2026 draft
+
+-- 9 of 13 --
+
+03
+New Verticals: Hotel Chains & Supply Chain
+Both of these extend the same verified-identity rail outward from the airport gate — they should feel like the
+same app, not a bolt-on.
+Figure 2. Proposed DigiYatra 2.0 ecosystem — core spine plus the two new verticals and the governance fixes from Section 1.
+3.1 Hotel Chain Integration
+This is a smaller leap than it looks. Every hotel in India already has a legal duty to collect and file near-identical
+data: a Guest Registration Card for every guest, and for foreign nationals specifically, a Form C filed to the
+Bureau of Immigration within 24 hours of check-in and again at checkout, under the Foreigners Act 1946 and the
+Registration of Foreigners Rules 1992. DigiYatra's ecosystem-partner framework already lets passengers opt in
+to share contact details for hotel bookings today — this is the natural next step, not a foreign add-on.
+• Pre-arrival digital check-in — share the verified identity and stay dates with the hotel before arrival,
+auto-populating the Guest Registration Card and Form C so front-desk staff stop retyping passport details by
+hand.
+• Biometric room access — reuse the same face token for room entry instead of a separate hotel app or key
+card.
+• Automated checkout — auto-file the checkout Form C the moment a guest checks out, closing a compliance
+step hotels currently do manually.
+• Family / group stays — reuse the Group-PNR linking from Section 2 (m4) so a family booked under one flight
+PNR checks into one hotel room without re-entering everyone's details.
+• Optional loyalty linking — strictly opt-in, and kept separate from the identity vault itself.
+Guardrail: nothing here should collect data hotels aren't already legally required to collect — it just gets
+collected once instead of twice. Keep a manual front-desk fallback, exactly like the airport's manual lane, and
+start with citizen/Aadhaar-based guests before extending to the multi-credential onboarding proposed in M6,
+DigiYatra 2.0 — Ecosystem Blueprint Prepared for Aniket
+Page 9 of 12	September 2026 draft
+
+-- 10 of 13 --
+
+since foreign-guest Form C handling is the more legally sensitive path.
+3.2 Supply Chain & Airport Logistics
+Airport logistics research typically treats cargo, baggage and catering handling as one connected problem, and
+RFID/IoT baggage tracking synced to a passenger's own app is an established pattern elsewhere in the industry.
+DigiYatra already creates a PNR-hash-linked journey record for every trip — that record is a natural anchor for a
+bag tag, without needing a new identity system.
+• RFID/BLE bag tracking — link a bag tag to the passenger's verified journey record; show real
+loaded/unloaded status in the Utility tab, aimed at cutting mishandling, not just showing a map pin.
+• Ground-crew & vendor identity badges — replace manual paper gate-passes for catering, fuel and cargo
+staff with the same credential-verification core used for passengers.
+• Cargo pre-clearance data bridge — mirror IATA's own passenger pre-clearance logic for goods, sharing
+customs data with airline cargo systems ahead of arrival.
+Guardrail, and it's an important one: goods and vendor identities are a different trust boundary from traveller
+biometrics (Section 1.3). Build this as its own module with its own access-control list behind the Utility tab —
+never let a baggage-tracking bug become a path into the passenger identity vault.
+04
+App Architecture — Making Two Tabs Work Hard
+Keeping this to two tabs is good information-architecture discipline — most identity “super-apps” fail by
+fragmenting into six or more tabs that no one fully explores. The fix for everything in Sections 2 and 3 is to load
+these two tabs well, not to add a third.
+Tab What lives there
+Authentication Identity creation & verification (multi-credential, M6) · document wallet (DigiLocker-linked) · the single
+consent/retention screen (M2, M3) · Group-PNR / family management (m4) · a Trust Center (audit log,
+breach history, one-tap revoke — M4).
+Utility Flight & gate tracking (m3) · SOS (m7) · web check-in · baggage tracking (3.2) · hotel check-in module
+(3.1) · offline token cache (m5) · wheelchair / accessibility booking.
+On the ideas you X'd out (conveyor-belt details, airport taxi integration, airport maps, sleeping-pod booking,
+wheelchair booking): that's your call to make and there may well have been good reasons to cut them for scope.
+Worth knowing only that airport maps and wheelchair/assistance booking are the cheapest of the five to bring
+back later, since they can sit as thin, low-maintenance entries inside the Utility tab rather than needing dedicated
+back-end work — useful if scope opens up again, not a reason to revisit the call now.
+05
+Public Policy, Cost, and Speed
+5.1 Policy Alignment
+• Design for DPDP Act 2023 compliance from day one — purpose limitation, the right to erasure, and data
+portability — rather than retrofitting it.
+• Internet Freedom Foundation's core asks (statutory backing, RTI-equivalent transparency) are a useful
+checklist your own project can model even before government policy catches up.
+• Treat the still-unresolved Data Protection Board timeline as a reason to over-invest in your own Trust Center
+(M4), not a reason to wait for regulation to force your hand.
+DigiYatra 2.0 — Ecosystem Blueprint Prepared for Aniket
+Page 10 of 12	September 2026 draft
+
+-- 11 of 13 --
+
+5.2 Cost Strategy
+• Reuse India Stack rails (Aadhaar, DigiLocker, UPI) instead of building parallel KYC or payment infrastructure.
+• Prefer open-source liveness/face-match models and on-device inference to cut both licensing and server
+bandwidth costs.
+• Phase hardware rollout to high-traffic airports first, mirroring the Foundation's own batch approach instead of
+duplicating the sequencing work.
+• A visible Trust Center (M4) reduces distrust-driven support tickets — transparency is a cost saver here, not just
+an ethics line item.
+5.3 Speed & Performance
+• The verified national benchmark to beat is 5 seconds average entry processing — not just faster than a manual
+queue, faster than DigiYatra's own current number.
+• Cache credentials before arrival, use a CDN for app assets, and keep the APK lightweight for lower-spec
+Tier-2/3 devices.
+• For the international piece, the standard to match is the April 2026 IATA proof-of-concept where Japan Airlines
+passengers transferred Tokyo–Hong Kong–London on one digital identity recognised by three different
+operators — and Dubai Airport's long-standing benchmark of cutting passenger time by up to 40% with
+comparable technology.
+06
+Suggested Build Order
+One way to sequence all of the above so trust and interoperability are foundational, not bolted on at the end:
+Phase Contents
+Phase 1 — Trust foundation Single consent/retention screen (M2, M3) · Trust Center stub (M4) · multi-credential
+onboarding data model (M6) · Group-PNR data model (m4).
+Phase 2 — Utility tab core Flight/gate tracking (m3) · SOS (m7) · web check-in · offline token cache (m5).
+Phase 3 — New verticals, pilot
+scale
+Hotel check-in MVP with one or two pilot chains, Form C auto-fill (3.1) · baggage RFID
+tracking MVP at one pilot airport (3.2).
+Phase 4 — Interoperability,
+from day one
+Build every token in IATA One ID format (M7) so international or multi-vendor expansion is
+a configuration change, not a rebuild.
+Sources & Further Reading
+Grounding for the facts and figures above, current through late August 2026. Paraphrased and summarised
+throughout; consult the originals for exact wording.
+Official announcements
+• Ministry of Civil Aviation / PIB, via newsonair.gov.in — milestone and policy statements
+• Airports Authority of India (aai.aero) — Biometric Boarding System overview
+• Storyboard18, Swarajya, The Statesman, IBEF — 10-crore/38-airport milestone coverage (30–31 May 2026)
+Consent & privacy history
+• The Hindu / Business Today / Biometric Update — LocalCircles survey coverage (January 2024)
+• The India Forum — “Digi Yatra: Service or Surveillance?”
+• HappyFares Blog — DigiYatra privacy/data-retention explainer (2026)
+Data ownership & litigation
+DigiYatra 2.0 — Ecosystem Blueprint Prepared for Aniket
+Page 11 of 12	September 2026 draft
+
+-- 12 of 13 --
+
+• ThePrint — Delhi High Court ownership dispute coverage (November 2025)
+• Internet Freedom Foundation — “DigiYatra: who owns your data?” (November 2025)
+• Bellwether India — Kerala High Court PIL coverage (March 2026)
+Global standards & benchmarks
+• IATA — One ID programme pages and Aviation Security Trust Framework
+• Biometric Update — April 2026 JAL/Hong Kong/Heathrow interoperability trial
+Hotel / FRRO compliance
+• Bureau of Immigration e-FRRO portal; Foreigners Act 1946 & Registration of Foreigners Rules 1992 guidance summaries
+DigiYatra 2.0 — Ecosystem Blueprint Prepared for Aniket
+Page 12 of 12	September 2026 draft
+
+-- 13 of 13 --
+

@@ -1,0 +1,31 @@
+/* Personal Travel Profile */
+.tp-card { background: #ffffff; border-radius: 20px; padding: 24px; box-shadow: 0 8px 32px rgba(15, 23, 42, 0.06); border: 1px solid #e2e8f0; }
+.tp-header { margin-bottom: 16px; }
+.tp-avatar-section { display: flex; align-items: center; gap: 12px; }
+.tp-avatar { width: 44px; height: 44px; border-radius: 14px; background: linear-gradient(135deg, #0a4cd9, #6366f1); display: flex; align-items: center; justify-content: center; color: white; }
+.tp-name { font-size: 16px; font-weight: 800; color: #0f172a; margin: 0; }
+.tp-lang { font-size: 10px; color: #64748b; display: flex; align-items: center; gap: 3px; margin: 2px 0 0; }
+
+/* Preferences */
+.tp-prefs { display: flex; gap: 8px; margin-bottom: 16px; }
+.tp-pref { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 12px 8px; border-radius: 12px; background: #f8fafc; color: #64748b; }
+.tp-pref-label { font-size: 9px; font-weight: 600; text-transform: uppercase; color: #94a3b8; }
+.tp-pref-value { font-size: 12px; font-weight: 800; color: #0f172a; }
+
+/* Section title */
+.tp-section-title { font-size: 12px; font-weight: 700; color: #334155; display: flex; align-items: center; gap: 6px; margin: 0 0 10px; }
+
+/* Loyalty */
+.tp-loyalty-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.tp-loyalty-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; border-radius: 12px; background: #f8fafc; }
+.tp-loyalty-info { display: flex; flex-direction: column; }
+.tp-loyalty-airline { font-size: 12px; font-weight: 700; color: #0f172a; }
+.tp-loyalty-program { font-size: 10px; color: #64748b; }
+.tp-loyalty-tier { padding: 3px 8px; border-radius: 20px; font-size: 10px; font-weight: 800; }
+.tp-tier-gold { background: #fef3c7; color: #b45309; }
+.tp-tier-silver { background: #f1f5f9; color: #475569; }
+.tp-tier-platinum { background: #ede9fe; color: #7c3aed; }
+
+/* Routes */
+.tp-routes { display: flex; flex-wrap: wrap; gap: 6px; }
+.tp-route-chip { padding: 5px 12px; border-radius: 20px; background: #eff6ff; color: #2563eb; font-size: 11px; font-weight: 700; }

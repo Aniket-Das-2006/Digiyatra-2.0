@@ -1,0 +1,268 @@
+/* ============================================================
+   Smart Airport Map
+   ============================================================ */
+
+.am-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.am-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.am-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.am-airport {
+  font-size: 11px;
+  color: #64748b;
+  margin: 2px 0 0;
+}
+
+.am-location-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* Gate Nav */
+.am-gate-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0a4cd9, #6366f1);
+  color: white;
+  margin-bottom: 16px;
+}
+
+.am-gate-label {
+  display: block;
+  font-size: 9px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  font-weight: 600;
+}
+
+.am-gate-number {
+  display: block;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.am-gate-route {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.am-nav-icon {
+  animation: pulse 2s infinite;
+}
+
+.am-gate-distance {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.am-gate-walk {
+  display: block;
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+.am-navigate-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s;
+}
+
+.am-navigate-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* Tabs */
+.am-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 14px;
+  background: #f1f5f9;
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.am-tab {
+  flex: 1;
+  padding: 7px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.am-tab-active {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* Amenities */
+.am-amenities {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  animation: fadeInUp 0.3s ease;
+}
+
+.am-amenity-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.am-amenity-row:hover {
+  background: #eff6ff;
+}
+
+.am-amenity-icon {
+  font-size: 16px;
+  width: 28px;
+  text-align: center;
+}
+
+.am-amenity-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.am-amenity-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.am-amenity-type {
+  font-size: 10px;
+  color: #94a3b8;
+  text-transform: capitalize;
+}
+
+.am-amenity-distance {
+  font-size: 11px;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+/* Queues */
+.am-queues {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  animation: fadeInUp 0.3s ease;
+}
+
+.am-queue-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.am-queue-long {
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+}
+
+.am-queue-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.am-queue-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.am-queue-time {
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.am-queue-warn {
+  color: #f59e0b;
+}
+
+.am-queue-tip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #f0fdf4;
+  color: #166534;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,90 @@
+.face-id-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.face-id-wrapper {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.face-id-wrapper svg {
+  position: absolute;
+  fill: none;
+  stroke: var(--text-color, #ffffff);
+  width: 100%;
+  height: 100%;
+}
+
+.face-id-wrapper.active .face-id-default {
+  opacity: 0;
+  transform: scale(1.2);
+  transition: opacity 1.5s, transform 1s;
+  stroke: var(--primary, #0a4cd9);
+}
+
+.face-id-circle {
+  border-radius: 50%;
+  border: 1px solid transparent;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-sizing: border-box;
+  position: absolute;
+  opacity: 0;
+}
+
+.face-id-wrapper.active .face-id-circle {
+  opacity: 1;
+  transition: opacity .7s, transform 2.2s;
+}
+
+.face-id-circle.green { border: 1px solid var(--accent-green, #10b981); }
+.face-id-circle.blue { border: 1px solid var(--primary, #0a4cd9); }
+.face-id-circle.purple { border: 1px solid var(--accent-purple, #8b5cf6); }
+
+.face-id-wrapper.active .face-id-circle.green { transform: rotateX(360deg); }
+.face-id-wrapper.active .face-id-circle.blue { transform: rotateY(360deg); }
+.face-id-wrapper.active .face-id-circle.purple { transform: rotateY(360deg) rotateX(360deg); }
+
+.face-id-wrapper.completed .face-id-circle.purple {
+  border: 1px solid var(--success, #34d399);
+  transition: border .7s;
+}
+.face-id-wrapper.completed .face-id-circle.green,
+.face-id-wrapper.completed .face-id-circle.blue {
+  opacity: 0;
+}
+
+.path-tick {
+  opacity: 0;
+}
+
+.face-id-wrapper.completed .path-tick {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 0;
+  animation: dash 0.6s linear forwards;
+  stroke-opacity: 1;
+  transition: stroke-opacity 0.1s step;
+  opacity: 1;
+  stroke: var(--success, #34d399);
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 50;
+    stroke-opacity: 1;
+  }
+  60% {
+    stroke-dashoffset: 50;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-opacity: 1;
+  }
+}

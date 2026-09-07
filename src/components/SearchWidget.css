@@ -1,0 +1,383 @@
+/* ============================================================
+   STACKED CARDS ARCHITECTURE (2-LAYER OFFSET DECK)
+   Back card = RED in diagram (top-right, translucent, ends higher)
+   Front card = BLUE in diagram (bottom-left, solid white, extends lower)
+   ============================================================ */
+.stacked-widget-wrapper {
+  max-width: 980px;
+  margin: -100px auto 50px;
+  position: relative;
+  z-index: 10;
+  padding-top: 64px; /* Enough space for tabs to breathe above front card */
+  animation: fadeInUp 0.7s var(--ease-out) 0.3s both;
+}
+
+/* ========================================
+   1. BACK LAYER — TRANSLUCENT FROSTED RECTANGLE
+   Offset TOP-RIGHT. Tall card that covers most of
+   the widget but ends ~60px HIGHER than the front card.
+   ======================================== */
+.white-back-deck {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 40px; /* Shifted right — front card peeks out on left */
+  bottom: 60px; /* Ends 60px HIGHER than front card bottom */
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  border-radius: 28px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
+  z-index: 1;
+  padding: 18px 24px 0;
+}
+
+.top-tab-bar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.tab-with-drawer {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.top-tab-btn {
+  background: rgba(255, 255, 255, 0.95);
+  color: #475569;
+  border: 1.5px solid #e2e8f0;
+  padding: 9px 26px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+}
+
+.top-tab-btn:hover:not(.active) {
+  transform: translateY(-2px) scale(1.03);
+  color: var(--primary);
+  background: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.top-tab-btn.active {
+  background: #1e293b;
+  color: #ffffff;
+  border-color: #1e293b;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.35);
+  animation: tabSpring 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes tabSpring {
+  0% { transform: scale(0.94); }
+  50% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+/* ========================================
+   2. FRONT CARD — SOLID WHITE RECTANGLE
+   Offset BOTTOM-LEFT. Extends lower than the back card.
+   ======================================== */
+.front-glass-card {
+  position: relative;
+  z-index: 5;
+  margin-right: 40px; /* Shifted left — back deck peeks out on right */
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 28px;
+  box-shadow:
+    0 20px 50px -8px rgba(15, 23, 42, 0.15),
+    0 4px 16px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.front-glass-card.tab-switching {
+  animation: tabContentSwitch 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes tabContentSwitch {
+  0% {
+    opacity: 0.3;
+    transform: translateY(6px) scale(0.99);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.front-glass-content {
+  padding: 24px 26px 18px;
+}
+
+/* ========================================
+   3. FLIGHT TYPES HEADER
+   ======================================== */
+.flight-types-header {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 18px;
+  padding-left: 8px;
+}
+
+.flight-type-btn {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 6px;
+  transition: all 0.25s var(--ease-smooth);
+}
+
+.flight-type-btn:hover {
+  color: #1e293b;
+}
+
+.flight-type-btn.active {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.flight-type-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background: #0a4cd9;
+  border-radius: 2px;
+  animation: tabUnderlineSpring 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes tabUnderlineSpring {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+/* ========================================
+   4. STACKED GLASS CAPSULES
+   ======================================== */
+.stacked-capsules {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.glass-capsule {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(240, 246, 255, 0.55) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04), inset 0 1px 1px #ffffff;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.glass-capsule:hover {
+  border-color: rgba(10, 76, 217, 0.4);
+  box-shadow: 0 12px 28px rgba(10, 76, 217, 0.1), inset 0 1px 1px #ffffff;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(235, 243, 255, 0.7) 100%);
+  transform: translateY(-2px);
+}
+
+.capsule-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.flex-1 { flex: 1; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.gap-24 { gap: 24px; }
+.text-right { text-align: right; }
+
+.icon-circle {
+  background: #ffffff;
+  color: var(--primary);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f1f5f9;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.glass-capsule:hover .icon-circle {
+  transform: scale(1.08) rotate(-4deg);
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.capsule-text label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.capsule-val {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.capsule-val.bold {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.capsule-val.muted {
+  color: #94a3b8;
+}
+
+.capsule-val .year,
+.capsule-val .country {
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+  margin-left: 4px;
+}
+
+.capsule-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(203, 213, 225, 0.7);
+  flex-shrink: 0;
+}
+
+.swap-icon-btn {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.swap-icon-btn:hover {
+  transform: rotate(180deg) scale(1.1);
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+.pill-search-btn {
+  background: linear-gradient(135deg, #0a4cd9 0%, #083ab3 100%);
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  box-shadow: 0 8px 22px rgba(10, 76, 217, 0.35);
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.pill-search-btn:hover {
+  background: linear-gradient(135deg, #083ab3 0%, #062b8a 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 12px 28px rgba(10, 76, 217, 0.45);
+}
+
+.pill-search-btn:active {
+  transform: translateY(0) scale(0.95);
+}
+
+/* ========================================
+   5. MINT GLASS PERKS FOOTER
+   ======================================== */
+.mint-glass-footer {
+  background: rgba(215, 248, 225, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.85);
+  padding: 16px 28px;
+}
+
+.perks-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 24px;
+}
+
+.perk-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #14532d;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.perk-item:hover {
+  transform: translateX(4px);
+}
+
+.perk-check {
+  color: #16a34a;
+  flex-shrink: 0;
+}
+
+/* Touch sensitive interactions */
+.touch-sensitive {
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+}
+
+.touch-sensitive:active {
+  transform: scale(0.96) !important;
+}
+
+@media (max-width: 900px) {
+  .front-glass-card {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .perks-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .glass-capsule {
+    flex-wrap: wrap;
+    padding: 12px;
+  }
+  .capsule-divider { display: none; }
+}

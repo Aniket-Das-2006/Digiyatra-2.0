@@ -1,0 +1,21 @@
+{
+  "header": {
+    "verify_identity": "VERIFY IDENTITY",
+    "verifying": "Verifying Identity...",
+    "verification_done": "Verification Done"
+  },
+  "hero": {
+    "title": "DigiYatra 2.0",
+    "subtitle": "Your Identity, Your Journey",
+    "desc": "Seamless, verified travel — flights, hotels, and beyond"
+  },
+  "footer": {
+    "brand_desc": "Verified Identity, Seamless Travel",
+    "placeholder_email": "Your Email",
+    "copyright": "© 2026 DigiYatra 2.0 — Built for India's Digital Travel Future"
+  },
+  "settings": {
+    "language": "Language",
+    "app_settings": "App Settings"
+  }
+}

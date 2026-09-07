@@ -1,0 +1,389 @@
+/* ============================================================
+   Boarding Pass Card — Precise Match to SS2
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
+.bp-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+  cursor: pointer;
+  background: #f1f6f8; /* very light blue/gray matching the background of the bottom */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.bp-card.hovered {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- Top Orange Header ---------- */
+.bp-header {
+  background: #f97316; /* Bright orange */
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 200px;
+}
+
+/* World map texture with diagonal lines */
+.bp-header::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  /* Diagonal stripes */
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.25) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+  /* Mask it with a world map */
+  -webkit-mask-image: url('/world-map.svg');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-image: url('/world-map.svg');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.bp-header-content {
+  position: relative;
+  z-index: 2;
+  padding: 24px 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Ensures left alignment */
+}
+
+.bp-date {
+  font-size: 13px;
+  font-weight: 800;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2px;
+  margin-left: 2px; /* Visual alignment with large text */
+}
+
+.bp-city-blr {
+  font-size: 88px;
+  font-weight: 700;
+  color: #000000; /* Pure black */
+  line-height: 0.75;
+  letter-spacing: -3px;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+}
+
+.bp-route-bottom {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Space between plane and BOM */
+  margin-top: 4px;
+}
+
+.bp-city-bom {
+  font-size: 88px;
+  font-weight: 700;
+  color: #ffffff; /* Pure white */
+  line-height: 0.75;
+  letter-spacing: -3px;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+}
+
+.bp-plane-icon {
+  color: #ffb085; /* Light orange/pinkish plane icon */
+  transform: rotate(45deg);
+  opacity: 1;
+}
+
+/* Diagonal Tail Fin Design */
+.bp-tail-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 290px;
+  height: 100%;
+  z-index: 1;
+}
+
+.bp-tail-white {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff; /* Pure white fin */
+  /* Tracing the fin: starts bottom-left, slants up, flat top, slants down */
+  clip-path: polygon(10% 100%, 65% 15%, 85% 15%, 100% 45%, 100% 100%);
+}
+
+.bp-airline-logo-container {
+  /* Position and rotate the logo inside the white fin */
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%) rotate(-48deg); /* Perfect slant alignment */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bp-airline-logo-text {
+  font-size: 15px;
+  font-weight: 900;
+  color: #dc2626; /* Deep Red */
+  letter-spacing: 1px;
+  margin-left: 2px;
+}
+
+.bp-airline-logo-bold {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #ea580c; /* Orange */
+  line-height: 0.85;
+  margin-top: -2px;
+  letter-spacing: -1.5px;
+}
+
+.bp-tail-orange {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #ea580c; /* Darker orange trailing edge */
+  /* Trailing edge triangle */
+  clip-path: polygon(85% 15%, 100% 45%, 100% 100%, 45% 100%);
+}
+
+
+
+/* ---------- Middle Body Section ---------- */
+.bp-body {
+  padding: 24px 24px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  background: #f1f6f8;
+}
+
+.bp-details {
+  flex: 1;
+}
+
+.bp-passenger {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.bp-flight-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bp-info-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.bp-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #94a3b8;
+  width: 50px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.bp-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* QR Code */
+.bp-qr-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 6px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.bp-qr-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.bp-qr-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 38px;
+  height: 38px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  padding: 2px;
+  border: 1px solid #f1f5f9;
+}
+
+/* ---------- Footer Row ---------- */
+.bp-footer-wrapper {
+  background: #f1f6f8;
+  padding: 0 20px 24px;
+}
+
+.bp-footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #e2e8f0; /* Pill background */
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.bp-footer-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 4px;
+  position: relative;
+}
+
+.bp-footer-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: #cbd5e1;
+}
+
+.bp-f-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.bp-f-value {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1;
+}
+
+/* ---------- Notch Cutouts ---------- */
+.bp-notch {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: #1e293b; /* Dark notch matching the background in ss2 */
+  border-radius: 50%;
+  z-index: 10;
+  top: 200px; /* At the border of orange and white */
+  transform: translateY(-50%);
+}
+
+.bp-notch-left {
+  left: -12px;
+}
+
+.bp-notch-right {
+  right: -12px;
+}
+
+/* Entrance Animation */
+.bp-card {
+  animation: boardingPassEntry 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes boardingPassEntry {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ============ Member Tabs ============ */
+.bp-wrapper { width: 100%; }
+.bp-member-tabs {
+  display: flex; gap: 4px; margin-bottom: 10px;
+  overflow-x: auto; scrollbar-width: none; padding: 2px 0;
+}
+.bp-member-tabs::-webkit-scrollbar { display: none; }
+.bp-member-tab {
+  display: flex; align-items: center; gap: 4px;
+  padding: 6px 14px; border-radius: 20px;
+  border: 2px solid #e2e8f0; background: #f8fafc;
+  cursor: pointer; font-size: 11px; font-weight: 700; color: #475569;
+  white-space: nowrap; transition: all 0.25s;
+}
+.bp-member-tab:hover { border-color: #94a3b8; }
+.bp-member-active { border-color: #0a4cd9; background: #0a4cd9; color: white; }
+.bp-member-verified { color: #16a34a; }
+.bp-member-active .bp-member-verified { color: #86efac; }
+.bp-member-pending { color: #f59e0b; }
+.bp-member-active .bp-member-pending { color: #fde68a; }
+.bp-member-name { font-size: 11px; }
+
+/* ============ Verification Badge ============ */
+.bp-verification-status { margin: 4px 0 6px; }
+.bp-face-ok {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 8px; border-radius: 6px;
+  background: #dcfce7; color: #166534;
+  font-size: 9px; font-weight: 700;
+}
+.bp-face-pending {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 8px; border-radius: 6px;
+  background: #fef3c7; color: #92400e;
+  font-size: 9px; font-weight: 700;
+}
+
+/* ============ Nav Arrows ============ */
+.bp-nav-arrows {
+  display: flex; align-items: center; justify-content: center;
+  gap: 14px; margin-top: 10px;
+}
+.bp-nav-btn {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 2px solid #e2e8f0; background: #f8fafc;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  color: #475569; transition: all 0.2s;
+}
+.bp-nav-btn:hover { border-color: #0a4cd9; color: #0a4cd9; background: #eff6ff; }
+.bp-nav-count { font-size: 11px; font-weight: 700; color: #94a3b8; }

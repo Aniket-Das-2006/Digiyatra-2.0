@@ -1,0 +1,124 @@
+.footer {
+  background: #f0f0f0;
+  padding: 60px 0 20px;
+  border-top: 1px solid var(--border-light);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+  margin-bottom: 40px;
+}
+
+.footer-brand {
+  flex: 0 0 280px;
+}
+
+.footer-logo { margin-bottom: 12px; }
+
+.brand-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-main);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.newsletter { margin-bottom: 20px; }
+
+.footer .input-group {
+  display: flex;
+  background: var(--white);
+  border-radius: var(--radius-pill);
+  padding: 5px;
+  border: 1px solid var(--border-light);
+  transition: border-color 0.3s;
+}
+.footer .input-group:focus-within { border-color: var(--primary); }
+
+.footer .input-group input {
+  border: none;
+  background: transparent;
+  padding: 8px 14px;
+  width: 100%;
+  outline: none;
+  font-size: 13px;
+  font-family: inherit;
+}
+
+.btn-send {
+  background: var(--primary);
+  color: var(--white);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s var(--ease-smooth);
+}
+.btn-send:hover {
+  background: var(--primary-hover);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px var(--primary-glow);
+}
+
+.app-stores {
+  display: flex;
+  gap: 10px;
+}
+.app-stores img {
+  height: 32px;
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.3s var(--ease-smooth);
+}
+.app-stores img:hover { transform: translateY(-2px); }
+
+.footer-links {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.link-column h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: var(--text-main);
+}
+
+.link-column ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link-column a {
+  font-size: 13px;
+  color: var(--text-muted);
+  transition: color 0.2s, transform 0.2s;
+  display: inline-block;
+}
+.link-column a:hover {
+  color: var(--primary);
+  transform: translateX(3px);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border-light);
+  padding-top: 18px;
+  font-size: 12px;
+  color: var(--text-light);
+}
+.footer-bottom a { text-decoration: underline; }
+
+@media (max-width: 768px) {
+  .footer-container { flex-direction: column; gap: 32px; }
+  .footer-brand { flex: 0 0 auto; }
+  .footer-links { flex-wrap: wrap; }
+  .link-column { width: 45%; margin-bottom: 20px; }
+}

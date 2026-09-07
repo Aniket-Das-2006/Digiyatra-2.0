@@ -1,0 +1,29 @@
+/* International Travel Assistant */
+.ia-card { background: #ffffff; border-radius: 20px; padding: 24px; box-shadow: 0 8px 32px rgba(15, 23, 42, 0.06); border: 1px solid #e2e8f0; }
+.ia-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+.ia-title { font-size: 15px; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 6px; margin: 0; }
+.ia-subtitle { font-size: 11px; color: #64748b; margin: 2px 0 0; }
+.ia-progress-badge { padding: 4px 12px; border-radius: 20px; background: #dcfce7; color: #16a34a; font-size: 12px; font-weight: 800; }
+
+/* Passport Card */
+.ia-passport-card { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 14px; background: linear-gradient(135deg, #1e3a5f, #1e40af); color: white; margin-bottom: 16px; }
+.ia-passport-icon { font-size: 28px; }
+.ia-passport-info { flex: 1; display: flex; flex-direction: column; }
+.ia-passport-number { font-size: 14px; font-weight: 800; letter-spacing: 1px; }
+.ia-passport-expiry { font-size: 10px; opacity: 0.7; }
+.ia-passport-status { display: flex; align-items: center; gap: 4px; padding: 3px 8px; border-radius: 20px; background: rgba(255,255,255,0.2); font-size: 10px; font-weight: 700; }
+
+/* Checklist */
+.ia-checklist { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.ia-check-row { display: flex; align-items: flex-start; gap: 10px; padding: 10px 14px; border-radius: 12px; }
+.ia-check-ok, .ia-check-active { background: #f0fdf4; }
+.ia-check-pending { background: #fef3c7; }
+.ia-check-info { display: flex; flex-direction: column; }
+.ia-check-label { font-size: 12px; font-weight: 700; color: #0f172a; }
+.ia-check-detail { font-size: 10px; color: #64748b; }
+.ia-icon-ok { color: #16a34a; flex-shrink: 0; margin-top: 1px; }
+.ia-icon-pending { color: #f59e0b; flex-shrink: 0; margin-top: 1px; }
+.ia-icon-warn { color: #ef4444; flex-shrink: 0; margin-top: 1px; }
+
+/* Tips */
+.ia-tips { display: flex; align-items: flex-start; gap: 6px; padding: 10px 14px; border-radius: 10px; background: #eff6ff; color: #1e40af; font-size: 10px; font-weight: 600; }

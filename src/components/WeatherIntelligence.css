@@ -1,0 +1,14 @@
+/* Weather Intelligence */
+.wi-card { background: #ffffff; border-radius: 20px; padding: 24px; box-shadow: 0 8px 32px rgba(15, 23, 42, 0.06); border: 1px solid #e2e8f0; }
+.wi-title { font-size: 15px; font-weight: 800; color: #0f172a; margin: 0 0 16px; }
+.wi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.wi-city-card { padding: 16px; border-radius: 14px; background: #f8fafc; border: 1px solid #f1f5f9; }
+.wi-label { font-size: 9px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; }
+.wi-main { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+.wi-weather-icon { color: #0a4cd9; }
+.wi-temp-block { display: flex; flex-direction: column; }
+.wi-temp { font-size: 24px; font-weight: 800; color: #0f172a; }
+.wi-condition { font-size: 11px; color: #64748b; font-weight: 600; }
+.wi-details { display: flex; gap: 12px; margin-bottom: 8px; }
+.wi-detail { display: flex; align-items: center; gap: 3px; font-size: 10px; color: #64748b; }
+.wi-advice { display: flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 8px; background: #eff6ff; color: #1e40af; font-size: 10px; font-weight: 600; }

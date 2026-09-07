@@ -1,0 +1,219 @@
+/* ========================================
+   NAVBAR — DEFAULT STATE (over hero image)
+   Transparent bg, WHITE text & buttons
+   ======================================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 18px 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  animation: fadeInDown 0.7s var(--ease-out) both;
+}
+
+/* ========================================
+   NAVBAR — SCROLLED STATE (card area reached)
+   Glassmorphism bg, dark text
+   ======================================== */
+.header.scrolled {
+  padding: 12px 0;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo — wordmark only */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-wordmark {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.header.scrolled .logo-wordmark {
+  color: #0f172a;
+  text-shadow: none;
+}
+
+/* Tricolor Y — saffron left arm / green right arm / stem changes */
+.logo-y {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  user-select: none;
+  display: inline-block;
+  /* Top layer: left=saffron, right=green for the two arms
+     Bottom layer: solid color for the vertical stem */
+  background:
+    linear-gradient(to right, #ff9933 50%, #138808 50%) top / 100% 42% no-repeat,
+    linear-gradient(#ffffff, #ffffff) bottom / 100% 58% no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* Scrolled (has bg): stem turns black */
+.header.scrolled .logo-y {
+  background:
+    linear-gradient(to right, #ff9933 50%, #138808 50%) top / 100% 42% no-repeat,
+    linear-gradient(#0f172a, #0f172a) bottom / 100% 58% no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: none;
+}
+
+/* Nav — only the verify button */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+/* VERIFY IDENTITY Button — default WHITE outline over hero */
+.btn-login {
+  padding: 10px 26px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  background: transparent;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.btn-login:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Scrolled state: dark outline + dark text */
+.header.scrolled .btn-login {
+  border-color: #0f172a;
+  color: #0f172a;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+.header.scrolled .btn-login:hover {
+  background: #0f172a;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.2);
+}
+
+/* Profile Avatar Button */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-profile:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-profile-scrolled {
+  border-color: #e2e8f0;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.btn-profile-scrolled:hover {
+  background: #0a4cd9;
+  color: #ffffff;
+  border-color: #0a4cd9;
+}
+
+/* Dynamic Island */
+.dynamic-island {
+  position: fixed;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 1000;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  width: auto;
+  min-width: 200px;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dynamic-island.active {
+  top: 24px;
+  opacity: 1;
+}
+
+.dynamic-island.success {
+  background: rgba(6, 78, 59, 0.9);
+  min-width: 220px;
+}
+
+.dynamic-island .spinner {
+  animation: spin-anim 1s linear infinite;
+}
+
+@keyframes spin-anim {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

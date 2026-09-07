@@ -1,0 +1,108 @@
+/* ============================================================
+   Baggage Tracker — RFID Supply Chain
+   ============================================================ */
+.bt-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.06);
+  border: 1px solid #e2e8f0;
+}
+.bt-title { font-size: 15px; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 6px; margin: 0; }
+.bt-subtitle { font-size: 11px; color: #64748b; margin: 2px 0 16px; }
+
+.bt-list { display: flex; flex-direction: column; gap: 14px; }
+
+.bt-bag { padding: 14px; border-radius: 14px; background: #f8fafc; border: 1px solid #f1f5f9; }
+
+.bt-bag-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.bt-bag-info { display: flex; flex-direction: column; gap: 2px; }
+.bt-bag-id { font-size: 13px; font-weight: 800; color: #0f172a; }
+.bt-bag-weight { font-size: 10px; color: #64748b; display: flex; align-items: center; gap: 3px; }
+.bt-location { font-size: 10px; color: #2563eb; display: flex; align-items: center; gap: 3px; font-weight: 600; }
+.bt-exception { font-size: 10px; color: #ef4444; display: flex; align-items: center; gap: 3px; font-weight: 700; background: #fee2e2; padding: 3px 8px; border-radius: 20px; }
+
+/* Steps Progress */
+.bt-steps { display: flex; align-items: flex-start; position: relative; }
+
+.bt-step-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.bt-step-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 9px;
+  font-weight: 700;
+  z-index: 2;
+  transition: all 0.3s;
+}
+
+.bt-done {
+  background: #16a34a;
+  color: white;
+}
+
+.bt-current {
+  background: #0a4cd9;
+  color: white;
+  box-shadow: 0 0 0 4px rgba(10, 76, 217, 0.2);
+  animation: pulse-dot 2s infinite;
+}
+
+.bt-step-num { font-size: 9px; }
+
+.bt-step-line {
+  position: absolute;
+  top: 10px;
+  left: calc(50% + 11px);
+  width: calc(100% - 22px);
+  height: 2px;
+  background: #e2e8f0;
+  z-index: 1;
+}
+
+.bt-line-done {
+  background: #16a34a;
+}
+
+.bt-step-label {
+  font-size: 8px;
+  color: #94a3b8;
+  margin-top: 4px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.bt-label-current {
+  color: #0a4cd9;
+  font-weight: 800;
+}
+
+.bt-alert-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #f0fdf4;
+  color: #166534;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(10, 76, 217, 0.2); }
+  50% { box-shadow: 0 0 0 8px rgba(10, 76, 217, 0.1); }
+}

@@ -1,0 +1,259 @@
+.booking-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.booking-modal-content {
+  background: #ffffff;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+  position: relative;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s;
+}
+
+.close-modal-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.modal-header {
+  padding: 40px 30px 30px;
+  color: white;
+}
+
+.modal-header h2 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.modal-header p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.flight-selection-area {
+  padding: 30px;
+  background: #f8fafc;
+}
+
+.flight-selection-area h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.flight-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.flight-option {
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flight-option:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.flight-option.selected {
+  background: #f0fdf4;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.flight-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.airline {
+  font-weight: 700;
+  color: #334155;
+  font-size: 14px;
+}
+
+.route-time {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.duration-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.dur-text, .stops-text {
+  font-size: 10px;
+  color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.line {
+  height: 2px;
+  width: 60px;
+  background: #cbd5e1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+}
+
+.flight-price {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.modal-footer {
+  padding: 24px 30px;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.confirm-btn {
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.2s, transform 0.2s;
+}
+
+.confirm-btn:hover:not(:disabled) {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+}
+
+.confirm-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Steps 2 & 3 */
+.booking-step-processing,
+.booking-step-success {
+  padding: 60px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f1f5f9;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 24px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.booking-step-success h2 {
+  margin-top: 20px;
+  color: #0f172a;
+}
+
+.booking-step-success p {
+  color: #64748b;
+  margin-bottom: 24px;
+}
+
+.ticket-summary {
+  background: #f8fafc;
+  padding: 16px 24px;
+  border-radius: 12px;
+  border: 1px dashed #cbd5e1;
+  text-align: left;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.ticket-summary p {
+  margin: 8px 0;
+  color: #334155;
+}
+
+.done-btn {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.done-btn:hover {
+  background: #059669;
+}

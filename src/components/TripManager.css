@@ -1,0 +1,354 @@
+/* ============================================================
+   Trip Manager — Premium Card
+   ============================================================ */
+
+.tm-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.tm-header {
+  margin-bottom: 16px;
+}
+
+.tm-trip-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #0a4cd9, #6366f1);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.tm-trip-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.tm-trip-dates {
+  font-size: 12px;
+  color: #64748b;
+  margin: 2px 0 0;
+}
+
+/* Tabs */
+.tm-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 3px;
+}
+
+.tm-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 7px 6px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tm-tab-active {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* Timeline */
+.tm-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  animation: fadeInUp 0.3s ease;
+}
+
+.tm-timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-radius: 10px;
+}
+
+.tm-timeline-item:hover {
+  background: #f8fafc;
+}
+
+.tm-tl-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 24px;
+}
+
+.tm-tl-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.tm-tl-connector {
+  width: 2px;
+  height: 24px;
+  background: #e2e8f0;
+  margin-top: 4px;
+}
+
+.tm-tl-content {
+  flex: 1;
+}
+
+.tm-tl-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tm-tl-icon {
+  font-size: 14px;
+}
+
+.tm-tl-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.tm-tl-meta {
+  display: flex;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.tm-tl-time {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.tm-tl-status {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.tm-tl-chevron {
+  color: #cbd5e1;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+/* Documents / Wallet */
+.tm-documents {
+  animation: fadeInUp 0.3s ease;
+}
+
+.tm-docs-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 12px;
+}
+
+.tm-docs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.tm-doc-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 12px;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tm-doc-card:hover {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.tm-doc-icon {
+  font-size: 24px;
+}
+
+.tm-doc-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+}
+
+.tm-doc-type {
+  font-size: 9px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Budget */
+.tm-budget {
+  animation: fadeInUp 0.3s ease;
+}
+
+.tm-budget-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 12px;
+}
+
+.tm-budget-bar {
+  height: 10px;
+  border-radius: 5px;
+  background: #f1f5f9;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.tm-budget-fill {
+  height: 100%;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #16a34a, #f59e0b, #ef4444);
+  transition: width 0.5s ease;
+}
+
+.tm-budget-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.tm-budget-stat {
+  text-align: center;
+  padding: 10px 6px;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.tm-bs-label {
+  display: block;
+  font-size: 9px;
+  color: #94a3b8;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.tm-bs-value {
+  display: block;
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-top: 2px;
+}
+
+/* Notifications */
+.tm-notifications {
+  animation: fadeInUp 0.3s ease;
+}
+
+.tm-notif-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 12px;
+}
+
+.tm-notif-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tm-notif-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+
+.tm-notif-completed {
+  background: #f0fdf4;
+  opacity: 0.8;
+}
+
+.tm-notif-active {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+}
+
+.tm-notif-upcoming {
+  background: #f8fafc;
+}
+
+.tm-notif-time {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+  min-width: 40px;
+  font-variant-numeric: tabular-nums;
+}
+
+.tm-notif-icon {
+  font-size: 14px;
+}
+
+.tm-notif-text {
+  flex: 1;
+  font-size: 12px;
+  color: #475569;
+  font-weight: 600;
+}
+
+.tm-notif-check {
+  color: #16a34a;
+  flex-shrink: 0;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
